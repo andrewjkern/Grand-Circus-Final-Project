@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "GLOSS"
+    }
+  },
+  "defaultProject": "GLOSS",
+  "cli": {
+    "analytics": false
+  }
 }
