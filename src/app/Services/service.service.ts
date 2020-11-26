@@ -12,11 +12,10 @@ export class ServiceService {
 
   public $getGLOSAPI = new Subject<any>();
 
-  //Practice searching buoy to return info
-  getBuoyData = (searchTerm: string): any => {
-    let searchBuoy = new HttpParams().set('query', searchTerm);
-    return this.httpClient.get(
-    `http://data.glos.us/erddap/tabledap/45013.json?&time%3E=2020-10-21T00%3A00%3A00Z`,
-    { params: searchBuoy }
+  //Get buoy to return data
+  getBuoyData = (): any => {
+    let buoyUrl =
+    'http://data.glos.us/erddap/tabledap/45013.json?&time%3E=2020-10-21T00%3A00%3A00Z';
+    return this.httpClient.get<any>(buoyUrl);
   };
 }
