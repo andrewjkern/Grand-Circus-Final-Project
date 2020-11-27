@@ -15,7 +15,7 @@ export class ServiceService {
   //Get buoy to return data
   getBuoyData = (): any => {
     let buoyUrl =
-    'http://data.glos.us/erddap/tabledap/45013.json?&time%3E=2020-10-21T00%3A00%3A00Z';
+    'https://glbuoys.glos.us/static/Buoy_tool/data/meta_english.json';
     return this.httpClient.get<any>(buoyUrl);
   };
   currentWeather = (): any => {
