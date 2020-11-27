@@ -7,7 +7,7 @@ import {ProfileComponent} from '../profile/profile.component';
 import {SettingsComponent} from '../settings/settings.component';
 import {TrendsComponent} from '../trends/trends.component';
 import { ngModuleJitUrl } from '@angular/compiler';
-
+import {DashboardComponent} from '../dashboard/dashboard.component';
 const glosRoutes: Routes = [
     {path: 'contact', component: ContactComponent},
     {path: 'navigation', component: NavigationComponent},
@@ -15,7 +15,8 @@ const glosRoutes: Routes = [
     {path: 'settings', component: SettingsComponent},
     {path: 'trends', component: TrendsComponent},
     {path: '', redirectTo: '', pathMatch: 'full'},
-    {path: '**', redirectTo: ''}
+    {path: '**', redirectTo: ''},
+    {path: 'dashboard', component: DashboardComponent},
 ];
 
 @NgModule({
