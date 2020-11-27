@@ -8,7 +8,6 @@ import {SettingsComponent} from '../settings/settings.component';
 import {DashboardComponent} from '../dashboard/dashboard.component'
 import {TrendsComponent} from '../trends/trends.component';
 import { ngModuleJitUrl } from '@angular/compiler';
-
 const glosRoutes: Routes = [
     {path: 'contact', component: ContactComponent},
     {path: 'navigation', component: NavigationComponent},
