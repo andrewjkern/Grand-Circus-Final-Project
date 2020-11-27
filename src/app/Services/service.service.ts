@@ -19,7 +19,7 @@ export class ServiceService {
     return this.httpClient.get<any>(buoyUrl);
   };
   currentWeather = (): any => {
-    return this.httpClient.get(`https://api.openweathermap.org/data/2.5/forecast?zip=48350APPID=392f6048b43be686e36404f5b294ec59` );
+    return this.httpClient.get(`https://api.openweathermap.org/data/2.5/forecast?zip=48350&appid=392f6048b43be686e36404f5b294ec59` );
   };
 }
 

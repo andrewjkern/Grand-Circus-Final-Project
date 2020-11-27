@@ -14,9 +14,10 @@ const glosRoutes: Routes = [
     {path: 'profile', component: ProfileComponent},
     {path: 'settings', component: SettingsComponent},
     {path: 'trends', component: TrendsComponent},
+    {path: 'dashboard', component: DashboardComponent},
     {path: '', redirectTo: '', pathMatch: 'full'},
     {path: '**', redirectTo: ''},
-    {path: 'dashboard', component: DashboardComponent},
+    
 ];
 
 @NgModule({
