@@ -5,9 +5,9 @@ import {ContactComponent} from '../contact/contact.component';
 import {NavigationComponent} from '../navigation/navigation.component';
 import {ProfileComponent} from '../profile/profile.component';
 import {SettingsComponent} from '../settings/settings.component';
+import {DashboardComponent} from '../dashboard/dashboard.component'
 import {TrendsComponent} from '../trends/trends.component';
 import { ngModuleJitUrl } from '@angular/compiler';
-import {DashboardComponent} from '../dashboard/dashboard.component';
 const glosRoutes: Routes = [
     {path: 'contact', component: ContactComponent},
     {path: 'navigation', component: NavigationComponent},
@@ -15,9 +15,8 @@ const glosRoutes: Routes = [
     {path: 'settings', component: SettingsComponent},
     {path: 'trends', component: TrendsComponent},
     {path: 'dashboard', component: DashboardComponent},
-    {path: '', redirectTo: '', pathMatch: 'full'},
-    {path: '**', redirectTo: ''},
-    
+    {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+    {path: '**', redirectTo: '/dashboard'}
 ];
 
 @NgModule({
