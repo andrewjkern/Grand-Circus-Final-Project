@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  postgresql:
+    image: postgres
+    container_name: pg-docker
+    ports:
+      - "5400:5432"
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    restart: always
