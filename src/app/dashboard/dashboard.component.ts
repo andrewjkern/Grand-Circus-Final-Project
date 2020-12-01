@@ -18,6 +18,9 @@ export class DashboardComponent implements OnInit {
     this.buoyService.getBuoyData().subscribe((result: any) => {
       console.log('result', result);
     });
+    this.buoyService.currentWeather().subscribe((result: any) => {
+      console.log('result', result);
+    });
   }
 
 

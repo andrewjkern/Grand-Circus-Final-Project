@@ -26,7 +26,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     GlosRoutesRoutingModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

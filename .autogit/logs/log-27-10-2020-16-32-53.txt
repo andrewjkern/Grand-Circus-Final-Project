@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+		Fri Nov 27 2020 16:32:53 GMT-0500 (Eastern Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/Services/service.service.ts
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
