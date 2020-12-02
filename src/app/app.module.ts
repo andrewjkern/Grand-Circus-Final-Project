@@ -11,6 +11,7 @@ import { TrendsComponent } from './trends/trends.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TopheaderComponent } from './topheader/topheader.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     TrendsComponent,
     ProfileComponent,
     SettingsComponent,
-    DashboardComponent
+    DashboardComponent,
+    TopheaderComponent
   ],
   imports: [
     GlosRoutesRoutingModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
