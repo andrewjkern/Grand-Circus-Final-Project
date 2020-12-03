@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AgmCoreModule } from '@agm/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import {GlosRoutesRoutingModule} from './Routing/routing';
 import { HttpClientModule } from '@angular/common/http';
@@ -33,7 +34,10 @@ import { MapsComponent } from './maps/maps.component';
     BrowserModule,
     GoogleMapsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBh_Gc31Kz2khMQGI4QdJATQSPYfcBbkMM'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
