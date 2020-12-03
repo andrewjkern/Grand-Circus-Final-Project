@@ -1,3 +1,18 @@
-<canvas id="line-chart" width="800" height="450"></canvas>
 
-<app-navigation></app-navigation>
+<div class="columns">
+    <app-navigation></app-navigation>
+
+    <div
+    class="chart-wrapper">
+        <canvas baseChart 
+            width="100" height="100"
+            [datasets]="lineChartData" 
+            [labels]="lineChartLabels" 
+            [options]="lineChartOptions"
+            [colors]="lineChartColors" 
+            [legend]="lineChartLegend" 
+            [chartType]="lineChartType" 
+            [plugins]="lineChartPlugins">
+        </canvas>
+    </div>
+</div>

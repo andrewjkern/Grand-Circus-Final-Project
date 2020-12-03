@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChartDataSets, ChartOptions } from 'chart.js';
+import { Color, Label } from 'ng2-charts';
+import { ServiceService } from '../Services/service.service';
 
 
 
@@ -9,50 +12,63 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class TrendsComponent implements OnInit {
 
-  constructor() { }
+  glosapi;
+  lineChartData: ChartDataSets[];
+  lineChartLabels: Label[];
+  lineChartOptions;
+  lineChartColors: Color[];
+  lineChartLegend;
+  lineChartPlugins;
+  lineChartType;
+  waterTemps = [];
+  waterTempsLabels = [];
 
-  ngOnInit(): void {}
+
+  constructor(private buoyService: ServiceService) { }
+
+  ngOnInit(): void {
+    this.buoyService.currentWeather().subscribe((result: any) => {
+      console.log('result', result);
+    });
+
+    this.buoyService.practiceGlos().subscribe((result: any) => {
+      console.log('result', result);
+      this.glosapi = result;
+      this.glosapi.table.rows.forEach(row => {
+        this.waterTemps.push(row[13]);
+        this.waterTempsLabels.push(row[0]);
+      })
+      console.log(this.waterTemps);
+      this.setData();
+    }, (err) => {
+      console.log('Error applying the glosapi call')
+    });
+  }
+
+  setData = () => {
+    this.lineChartData = [
+      { data: this.waterTemps, label: 'Water Temperature' },
+    ];
+
+    this.lineChartLabels = this.waterTempsLabels;
+
+    this.lineChartOptions = {
+      responsive: true,
+    };
+
+    this.lineChartColors = [
+      {
+        borderColor: 'black',
+        backgroundColor: 'rgba(255,255,0,0.28)',
+      },
+    ];
+
+    this.lineChartLegend = true;
+    this.lineChartPlugins = [];
+    this.lineChartType = 'line';
+  }
 }
 
-  //   new Chart(document.getElementById("line-chart"), {
-  //     type: 'line',
-  //     data: {
-  //       labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
-  //       datasets: [{ 
-  //           data: [86,114,106,106,107,111,133,221,783,2478],
-  //           label: "Africa",
-  //           borderColor: "#3e95cd",
-  //           fill: false
-  //         }, { 
-  //           data: [282,350,411,502,635,809,947,1402,3700,5267],
-  //           label: "Asia",
-  //           borderColor: "#8e5ea2",
-  //           fill: false
-  //         }, { 
-  //           data: [168,170,178,190,203,276,408,547,675,734],
-  //           label: "Europe",
-  //           borderColor: "#3cba9f",
-  //           fill: false
-  //         }, { 
-  //           data: [40,20,10,16,24,38,74,167,508,784],
-  //           label: "Latin America",
-  //           borderColor: "#e8c3b9",
-  //           fill: false
-  //         }, { 
-  //           data: [6,3,2,2,7,26,82,172,312,433],
-  //           label: "North America",
-  //           borderColor: "#c45850",
-  //           fill: false
-  //         }
-  //       ]
-  //     },
-  //     options: {
-  //       title: {
-  //         display: true,
-  //         text: 'World population per region (in millions)'
-  //       }
-  //     }
-  //   });
-  // }
+
 
 
