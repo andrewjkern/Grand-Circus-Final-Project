@@ -7,6 +7,9 @@ import { ServiceService } from '../Services/service.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  glosapi;
+
   zoom = 12
   center: google.maps.LatLngLiteral
   options: google.maps.MapOptions = {
@@ -24,14 +27,15 @@ export class DashboardComponent implements OnInit {
   @Input() buoyInfo;
 
   ngOnInit(): void {
-    this.buoyService.getBuoyData().subscribe((result: any) => {
-      console.log('result', result);
-    });
+
     this.buoyService.currentWeather().subscribe((result: any) => {
       console.log('result', result);
     });
     this.buoyService.practiceGlos().subscribe((result: any) => {
       console.log('result', result);
+      this.glosapi = result;
+    }, (err) => {
+      console.log('Error applying the glosapi call ngmodel')
     });
   }
 

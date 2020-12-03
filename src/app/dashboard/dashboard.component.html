@@ -1,4 +1,36 @@
+
 <app-topheader></app-topheader>
-<app-navigation></app-navigation>
+
+<div class="mainContainer">
+    <app-navigation></app-navigation>
+
+    <div 
+    class="columns">
+        <div class="column">
+          <div class="box">
+            <p class="title is-5">Map</p>
+            <p class="subtitle">Map display</p>
+          </div>
+        </div>
+
+        <div class="column is-narrow-mobile">
+            <div class="box">
+              <p class="title is-5">Water Quality Box</p>
+              <p class="subtitle">Safe or not.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="box">
+              <p class="title is-5">Data for Today</p>
+              <p class="subtitle">{{glosapi.table.rows[39][0] | date:"short"}}</p>
+              <p class="subtitle">Temp: {{glosapi.table.rows[33][33]}}</p>
+              <p class="subtitle">Wind Speed:  {{glosapi.table.rows[12][12]}}</p>
+              <p class="subtitle">Water Temp: {{glosapi.table.rows[13][13]}}</p>
+            </div>
+          </div>
+      </div>
+      
+</div>
 
 

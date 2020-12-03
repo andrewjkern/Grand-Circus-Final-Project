@@ -1,7 +1,6 @@
 aside {
     height: 100vh;
     margin-left: 10px;
-    width: 20%;
 }
 
 .navbar-brand {
@@ -11,4 +10,11 @@ aside {
 li {
     margin-right: 2%;
     margin-left: 2%;
+}
+
+@media only screen and (max-width: 600px) {
+    aside {
+        height: 100%;
+        margin-left: 10px;
+    }
 }
