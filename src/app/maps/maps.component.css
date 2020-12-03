@@ -1,4 +1,6 @@
-agm-map {
+google-map {
   height: 600px;
-  width: 75vw;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
 }

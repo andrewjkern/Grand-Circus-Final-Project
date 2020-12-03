@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AgmCoreModule } from '@agm/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import {GlosRoutesRoutingModule} from './Routing/routing';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -35,9 +35,6 @@ import { MapsComponent } from './maps/maps.component';
     GoogleMapsModule,
     AppRoutingModule,
     HttpClientModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBh_Gc31Kz2khMQGI4QdJATQSPYfcBbkMM'
-    })
   ],
   providers: [],
   bootstrap: [AppComponent]

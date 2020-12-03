@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../Services/service.service';
 
 
 @Component({
@@ -8,123 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapsComponent implements OnInit {
   title = 'Great Lakes Observing System Buoys';
-  lat = 44.182205;
-  lng = -84.506836;
+  center= {lat: 44.182205,lng: -84.506836}
+  zoom = 6;
 
-  markers: marker[] = [
-  {lat: 48.061,lng: -87.793,label: 45001,},
-{lat:45.344,lng:-86.411,label: 45002,},
-{lat:45.351,lng:-82.84,label: 45003,},
-{lat:47.585,lng:-86.585,label: 45004,},
-{lat:41.677,lng:-82.398,label: 45005,},
-{lat:47.335,lng:-89.793,label: 45006,},
-{lat:42.674,lng:-87.026,label: 45007,},
-{lat:44.283,lng:-82.416,label: 45008,},
-{lat:43.621,lng:-77.406,label: 45012,},
-{lat:43.1,lng:-87.85,label: 45013,},
-{lat:44.8,lng:-87.76,label: 45014,},
-{lat:44.789,lng:-85.604,label: 45020,},
-{lat:45.403,lng:-85.088,label: 45022,},
-{lat:47.26993,lng:-88.60705,label: 45023,},
-{lat:43.97665,lng:-86.55945,label: 45024,},
-{lat:46.96873,lng:-88.39768,label: 45025,},
-{lat:41.983,lng:-86.617,label: 45026,},
-{lat:46.86,lng:-91.93,label: 45027,},
-{lat:46.81,lng:-91.84,label: 45028,},
-{lat:42.899572,lng:-86.272291,label: 45029,},
-{lat:42.46,lng:-81.22,label: 45132,},
-{lat:43.78,lng:-76.87,label: 45135,},
-{lat:48.53,lng:-86.95,label: 45136,},
-{lat:45.54,lng:-81.01,label: 45137,},
-{lat:43.25,lng:-79.53,label: 45139,},
-{lat:42.74,lng:-79.29,label: 45142,},
-{lat:44.94,lng:-80.627,label: 45143,},
-{lat:42.43,lng:-82.68,label: 45147,},
-{lat:43.54,lng:-82.07,label: 45149,},
-{lat:46.05,lng:-82.64,label: 45154,},
-{lat:43.77,lng:-78.98,label: 45159,},
-{lat:43.179067,lng:-86.36076,label: 45161,},
-{lat:44.988,lng:-83.331,label: 45162,},
-{lat:43.986,lng:-83.595,label: 45163,},
-{lat:41.73213,lng:-81.69372,label: 45164,},
-{lat:41.7020333,lng:-83.26145,label: 45165,},
-{lat:44.785,lng:-73.258,label: 45166,},
-{lat:42.186,lng:-80.137,label: 45167,},
-{lat:42.397,lng:-86.331,label: 45168,},
-{lat:41.615,lng:-81.821,label: 45169,},
-{lat:41.755,lng:-86.968,label: 45170,},
-{lat:46.7238888,lng:-87.4113888,label: 45171,},
-{lat:46.7411111,lng:-85.9755555,label: 45172,},
-{lat:46.57281,lng:-86.57217,label: 45173,},
-{lat:42.135,lng:-87.655,label: 45174,},
-{lat:45.82526,lng:-84.77217,label: 45175,},
-{lat:41.55016,lng:-81.76528,label: 45176,},
-{lat:41.55,lng:-81.765,label: 45176b,},
-{lat:47.19472,lng:-87.22389,label: 45179,},
-{lat:48.034,lng:-87.73,label: 45180,},
-{lat:43.09652,lng:-87.86444,label: 45182,},
-{lat:44.98164,lng:-85.83086,label: 45183,},
-{lat:44.550284,lng:-87.95888,label: 45184,},
-{lat:44.57673,lng:-87.987606,label: 45185,},
-{lat:42.367168,lng:-87.795225,label: 45186,},
-{lat:42.490631,lng:-87.778884,label: 45187,},
-{lat:41.4563,lng:-82.6727,label: bgsdb,},
-{lat:41.4629,lng:-82.6502,label: bgsusd,},
-{lat:41.469318,lng:-82.75045,label: bgsusd2,},
-{lat:43.49,lng:-76.52,label: ESF1,},
-{lat:43.23,lng:-76.94,label: ESF2,},
-{lat:42.56,lng:-79.43,label: ESF3,},
-{lat:43.25,lng:-76.96,label: ESF5,},
-{lat:43.282,lng:-76.961,label: ESF8,},
-{lat:43.388,lng:-78.192,label: ESF9,},
-{lat:41.762,lng:-83.331,label: glerlwe2,},
-{lat:41.826667,lng:-83.195,label: glerlwe4,},
-{lat:41.819167,lng:-83.359167,label: glerlwe8,},
-{lat:41.7335,lng:-83.13336,label: glerlwe13,},
-{lat:41.904,lng:-80.807,label: leash,},
-{lat:41.51859974,lng:-82.01237832,label: leavon,},
-{lat:41.464404,lng:-82.647769,label: lebiww,},
-{lat:41.816801,lng:-82.740579,label: lecarr,},
-{lat:41.4545,lng:-82.2161,label: leelyria,},
-{lat:41.409822,lng:-82.554419,label: lehuron,},
-{lat:41.48657,lng:-82.23877,label: lelorain,},
-{lat:41.721,lng:-81.363,label: lementor,},
-{lat:41.5426,lng:-82.7269,label: lemrbhd,},
-{lat:41.514315,lng:-82.9386,label: leoc,},
-{lat:41.67196,lng:-83.2903,label: leorgn,},
-{lat:41.427553,lng:-82.359059,label: leverm,},
-{lat:42.41,lng:-81.637,label: OMOECC_E1,},
-{lat:43.80139,lng:-79.01208,label: OMOECC_O1,},
-{lat:43.80139,lng:-79.01208,label: OMOECC_O2,},
-{lat:41.65912,lng:-82.8231,label: osugi,},
-{lat:41.53277,lng:-82.4611,label: osuss,},
-{lat:41.69947,lng:-83.258675,label: tolcrib,},
-{lat:41.67496,lng:-83.3079,label: tollsps,},
-{lat:45.5651,lng:-84.6723,label: UMBIO,},
-{lat:41.724365,lng:-83.370224,label: utlcp,},
-{lat:47.20753,lng:-88.15988,label: SPOT-0573,},
-{lat:41.816801,lng:-82.740579,label: lecarr,},
-{lat:43.49,lng:-76.52,label: 45189,},
-{lat:46.562117,lng:-86.465167,label: SPOT-0583,},
-{lat:42.1444,lng:-80.125,label: PA-DEP-1538,},
-{lat:43.971767,lng:-86.554233,label: SPOT-0648,},
-{lat:47.192117,lng:-87.225367,label: SPOT-0592,},
-{lat:45.402533,lng:-85.0896,label: SPOT-0700,},
-{lat:42.02185,lng:-82.669667,label: uwss-raeon1,},
-{lat:41.9922418,lng:-82.7173312,label: uwss-raeon2,},
-{lat:41.816801,lng:-82.740579,label: uwraeon1,},
-{lat:42.2341928,lng:-83.1077413,label: uwraeon4,},
-{lat:41.84999,lng:-82.43,label: uwraeon2,},
-{lat:41.8175,lng:-82.54137,label: uwraeon3,},
-{lat:41.645815,lng:-82.812282,label: sbipib,},
-{lat:41.481047,lng:-82.834523,label: sbedison,},
-
-  ]
-
-
-  constructor() { }
+buoys: any[]= []
+  constructor(private service: ServiceService) { }
 
   ngOnInit(): void {
+    this.service.getBuoys().subscribe(res => {this.buoys=res
+    
+  this.buoys.forEach(buoy => {buoy.position={lat:buoy.lat,lng:buoy.lon}})
+  console.log(this.buoys)})
   }
-
+  
 }

@@ -12,18 +12,14 @@ export class ServiceService {
 
   public $getGLOSAPI = new Subject<any>();
 
-  //Get buoy to return data
-  getBuoyData = (): any => {
-    let buoyUrl =
-    'https://glbuoys.glos.us/static/Buoy_tool/data/meta_english.json';
-    return this.httpClient.get<any>(buoyUrl);
-  };
   currentWeather = (): any => {
     return this.httpClient.get(`https://api.openweathermap.org/data/2.5/forecast?zip=48350&appid=392f6048b43be686e36404f5b294ec59` );
   };
-
+getBuoys () : any{
+return this.httpClient.get("https://glbuoys.glos.us/static/Buoy_tool/data/meta_english.json")
+}
   practiceGlos = (): any => {
-    return this.httpClient.get(`http://data.glos.us/erddap/info/45013/index.json` );
+    return this.httpClient.get(`http://data.glos.us/erddap/tabledap/45013.json?&time%3E=2020-10-21T00%3A00%3A00Z&time%3C=2020-10-28T21%3A30%3A00Z` );
   };
 }
 
