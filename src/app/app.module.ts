@@ -35,7 +35,6 @@ import { MapsComponent } from './maps/maps.component';
     GoogleMapsModule,
     AppRoutingModule,
     HttpClientModule,
-    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

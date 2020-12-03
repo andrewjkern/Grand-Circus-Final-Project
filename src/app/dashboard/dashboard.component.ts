@@ -10,16 +10,16 @@ export class DashboardComponent implements OnInit {
 
   glosapi;
 
-  zoom = 12
-  center: google.maps.LatLngLiteral
-  options: google.maps.MapOptions = {
-    mapTypeId: 'hybrid',
-    zoomControl: false,
-    scrollwheel: false,
-    disableDoubleClickZoom: true,
-    maxZoom: 15,
-    minZoom: 8,
-  }
+  // zoom = 12
+  // center: google.maps.LatLngLiteral
+  // options: google.maps.MapOptions = {
+  //   mapTypeId: 'hybrid',
+  //   zoomControl: false,
+  //   scrollwheel: false,
+  //   disableDoubleClickZoom: true,
+  //   maxZoom: 15,
+  //   minZoom: 8,
+  // }
   constructor(private buoyService: ServiceService) {}
 
   buoyArray: any[] = [];
