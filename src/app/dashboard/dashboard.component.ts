@@ -9,7 +9,10 @@ import { ServiceService } from '../Services/service.service';
 export class DashboardComponent implements OnInit {
 
   glosapi;
-
+date = ""
+temperature = ""
+windSpeed = ""
+waveHeight = ""
   // zoom = 12
   // center: google.maps.LatLngLiteral
   // options: google.maps.MapOptions = {
@@ -24,8 +27,8 @@ export class DashboardComponent implements OnInit {
 
   buoyArray: any[] = [];
 
-  @Input() buoyInfo;
-
+  // @Input() buoyInfo;
+  buoyTemp: number;
   ngOnInit(): void {
 
     this.buoyService.currentWeather().subscribe((result: any) => {
@@ -38,6 +41,11 @@ export class DashboardComponent implements OnInit {
       console.log('Error applying the glosapi call ngmodel')
     });
   }
-
+handleClick(event) {
+  console.log(event)
+  this.temperature=event.NWSForecast.temperature[0]
+  this.windSpeed=event.NWSForecast.windspeed[0]
+  this.waveHeight=event.NWSForecast.waveheight[0]
+}
 
 }
