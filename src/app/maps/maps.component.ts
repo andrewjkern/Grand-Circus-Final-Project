@@ -15,7 +15,7 @@ export class MapsComponent implements OnInit {
   title = 'Great Lakes Observing System Buoys';
   center= {lat: 44.182205,lng: -84.506836}
   zoom = 6.2;
-  // temperature= this.buoy.temperature;
+  
 
 buoys: any[]= []
   constructor(private service: ServiceService) { }
