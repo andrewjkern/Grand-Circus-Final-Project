@@ -13,6 +13,7 @@ date = ""
 temperature = ""
 windSpeed = ""
 waveHeight = ""
+forecast = ""
   // zoom = 12
   // center: google.maps.LatLngLiteral
   // options: google.maps.MapOptions = {
@@ -44,8 +45,15 @@ waveHeight = ""
 handleClick(event) {
   console.log(event)
   this.temperature=event.NWSForecast.temperature[0]
+  this.forecast=event.NWSForecast.title[0]
   this.windSpeed=event.NWSForecast.windspeed[0]
   this.waveHeight=event.NWSForecast.waveheight[0]
 }
-
+// waterQualityBasedOnTemp(){
+//   if (this.temperature=< swim_minair){
+//     answer = "Not safe"
+//   }else{
+//     answer = "safe"
+//   }
+// };
 }
