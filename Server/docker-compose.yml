@@ -3,9 +3,9 @@ version: "3"
 services:
   postgresql:
     image: postgres
-    container_name: pg-docker
+    container_name: pg-glos
     ports:
-      - "5400:5432"
+      - "5500:5432"
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker

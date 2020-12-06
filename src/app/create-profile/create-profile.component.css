@@ -1,0 +1,13 @@
+.createProfile{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+/* .name{
+    display: flex;
+    flex-direction: row;
+} */
+.check{
+    display: flex;
+    flex-direction: row;
+}

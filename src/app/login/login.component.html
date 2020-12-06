@@ -1,0 +1,13 @@
+<div class="mainContainer">
+<div>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class=loginForm>
+    E-mail:<input type="text" name="email" id="email" formControlName="email">
+    Password:<input type="text" name="password" id="password" formControlName="password">
+<input type="submit" value="Log In">
+</form>
+</div>
+<div class="createProfile">
+<h3>New Here?</h3>
+<a routerLink="/create-profile" class="is-active"><button>Create An Account</button></a>
+</div>
+</div>

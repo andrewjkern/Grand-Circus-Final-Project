@@ -1,0 +1,15 @@
+<app-navigation></app-navigation>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="createProfile">
+    <div class="name">
+    First Name<input  type="text" formControlName="firstname">
+    Last Name<input  type="text" formControlName="lastname">
+</div>
+    E-Mail Address<input type="email" formControlName="email">
+    Opt In to Newsletter?<input class="check" type="checkbox" formControlName="optin">
+    Password<input type="text" formControlName="password">
+    <p>My Favorite Water Activities Are:</p>
+    <div class="check">Swimming<input type="checkbox" formControlName="swims"></div>
+    <div class="check">Kayaking<input type="checkbox" formControlName="kayaks"></div>
+    <div class="check">Boating<input type="checkbox" formControlName="boats"></div>
+    <input type="submit" value="Create Profile">
+</form>

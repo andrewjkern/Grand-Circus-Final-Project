@@ -11,6 +11,9 @@ import { TrendsComponent } from './trends/trends.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateProfileComponent } from './create-profile/create-profile.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, FormControl, Validators, ReactiveFormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -20,13 +23,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     TrendsComponent,
     ProfileComponent,
     SettingsComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateProfileComponent,
+    LoginComponent
   ],
   imports: [
     GlosRoutesRoutingModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
