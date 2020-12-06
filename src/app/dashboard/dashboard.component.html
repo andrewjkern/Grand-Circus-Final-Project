@@ -1,13 +1,36 @@
-<!-- <div class="mainContainer">
-    <div
-    *ngFor="let array of buoyInfo; index as i"
-    class="table">
-        <div class="buoyInformation">
-            Recent Temp at 1m: <div class="tempText">{{ array. }} </div>
+
+<app-topheader></app-topheader>
+
+<div class="columns">
+  
+    <app-navigation></app-navigation>
+
+    <div 
+    class="columns">
+        <div class="column">
+          <div class="box">
+            <p class="title is-5">Map</p>
+            <app-maps (newItemEvent)="handleClick($event)"></app-maps>
+          </div>
         </div>
 
-    </div>
-</div> -->
-<app-navigation></app-navigation>
+        <div class="column is-narrow-mobile">
+            <div class="box">
+              <p class="title is-5">Water Quality Box</p>
+              <p class="subtitle">Safe or not.</p>
+            </div>
+        </div>
 
-<p>HELLO {{user.firstname}}</p>
+        <div class="column">
+            <div class="box">
+              <p class="title is-5">Data for Today</p>
+              <p class="subtitle">{{date | date:"short"}}</p>
+              <p class="subtitle">Temperature: {{temperature}}</p>
+              <p class="subtitle">Wind Speed:  {{windSpeed}}</p>
+              <p class="subtitle">Water Height: {{waveHeight}}</p>
+            </div>
+          </div>
+      </div>
+      
+</div>
+

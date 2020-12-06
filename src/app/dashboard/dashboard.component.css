@@ -1,0 +1,20 @@
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.columns {
+    padding-top: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    .mainContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .columns {
+        padding-top: 0px;
+    }
+    
+  }

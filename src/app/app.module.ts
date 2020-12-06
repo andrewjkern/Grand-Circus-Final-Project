@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { GoogleMapsModule } from '@angular/google-maps';
 import {GlosRoutesRoutingModule} from './Routing/routing';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +17,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, FormControl, Validators, ReactiveFormsModule} from '@angular/forms'
+import { TopheaderComponent } from './topheader/topheader.component';
+import { MapsComponent } from './maps/maps.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +30,19 @@ import { FormsModule, FormControl, Validators, ReactiveFormsModule} from '@angul
     SettingsComponent,
     DashboardComponent,
     CreateProfileComponent,
-    LoginComponent
+    LoginComponent,
+    TopheaderComponent,
+    MapsComponent
   ],
   imports: [
     GlosRoutesRoutingModule,
     BrowserModule,
+    GoogleMapsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
