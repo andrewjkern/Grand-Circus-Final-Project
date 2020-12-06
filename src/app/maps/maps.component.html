@@ -1,10 +1,6 @@
 <h1>{{ title }}</h1>
 <google-map [center]="center" [zoom]="zoom">
-  <map-marker *ngFor= "let buoy of buoys; index as i"
-  [position]="buoy.position" [label]="buoy.id"></map-marker>
+  <map-marker #marker="mapMarker" *ngFor="let buoy of buoys; index as i" [position]="buoy.position" [label]="buoy.id"
+    (mapClick)="openInfoWindow(marker, i)"></map-marker>
+  <map-info-window></map-info-window>
 </google-map>
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<!-- <agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map> -->

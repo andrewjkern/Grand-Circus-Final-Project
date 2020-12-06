@@ -14,6 +14,9 @@ import { TrendsComponent } from './trends/trends.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateProfileComponent } from './create-profile/create-profile.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, FormControl, Validators, ReactiveFormsModule} from '@angular/forms'
 import { TopheaderComponent } from './topheader/topheader.component';
 import { MapsComponent } from './maps/maps.component';
 
@@ -26,6 +29,8 @@ import { MapsComponent } from './maps/maps.component';
     ProfileComponent,
     SettingsComponent,
     DashboardComponent,
+    CreateProfileComponent,
+    LoginComponent,
     TopheaderComponent,
     MapsComponent
   ],
@@ -35,6 +40,8 @@ import { MapsComponent } from './maps/maps.component';
     GoogleMapsModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     ChartsModule
   ],
   providers: [],

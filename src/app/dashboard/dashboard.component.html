@@ -10,7 +10,7 @@
         <div class="column">
           <div class="box">
             <p class="title is-5">Map</p>
-            <app-maps></app-maps>
+            <app-maps (newItemEvent)="handleClick($event)"></app-maps>
           </div>
         </div>
 
@@ -24,10 +24,10 @@
         <div class="column">
             <div class="box">
               <p class="title is-5">Data for Today</p>
-              <p class="subtitle">{{glosapi.table.rows[39][0] | date:"short"}}</p>
-              <p class="subtitle">Temp: {{glosapi.table.rows[33][33]}}</p>
-              <p class="subtitle">Wind Speed:  {{glosapi.table.rows[12][12]}}</p>
-              <p class="subtitle">Water Temp: {{glosapi.table.rows[13][13]}}</p>
+              <p class="subtitle">{{date | date:"short"}}</p>
+              <p class="subtitle">Temperature: {{temperature}}</p>
+              <p class="subtitle">Wind Speed:  {{windSpeed}}</p>
+              <p class="subtitle">Water Height: {{waveHeight}}</p>
             </div>
           </div>
       </div>

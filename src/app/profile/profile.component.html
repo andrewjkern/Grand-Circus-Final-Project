@@ -1,3 +1,71 @@
-<p>profile works!</p>
 <app-navigation></app-navigation>
+<form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+  <input
+    type="text"
+    name="firstname"
+    id="Name"
+    placeholder="{{ user.firstname }}"
+    value="{{user.firstname}}"
+  />
+  <input
+    type="text"
+    name="lastname"
+    id="Name"
+    placeholder="{{ user.lastname }}"
+  />
 
+  <input type="email" name="email" id="email" placeholder="{{ user.email }}" />
+  <input
+    type="number"
+    name="kayak_minair"
+    placeholder="{{ user.kayak_minair }}"
+  />
+  <input
+    type="number"
+    name="kayak_minwater"
+    placeholder="{{ user.kayak_minwater }}"
+  /><input
+    type="number"
+    name="kayak_maxwind"
+    placeholder="{{ user.kayak_maxwind }}"
+  /><input
+    type="number"
+    name="kayak_maxwave"
+    placeholder="{{ user.kayak_maxwave }}"
+  /><input
+    type="number"
+    name="swim_minair"
+    placeholder="{{ user.swim_minair }}"
+  />
+  <input
+    type="number"
+    name="swim_minwater"
+    placeholder="{{ user.swim_minwater }}"
+  /><input
+    type="number"
+    name="swim_maxwind"
+    placeholder="{{ user.swim_maxwind }}"
+  /><input
+    type="number"
+    name="swim_maxwave"
+    placeholder="{{ user.swim_maxwave }}"
+  /><input
+    type="number"
+    name="boat_minair"
+    placeholder="{{ user.boat_minair }}"
+  />
+  <input
+    type="number"
+    name="boat_minwater"
+    placeholder="{{ user.boat_minwater }}"
+  /><input
+    type="number"
+    name="boat_maxwind"
+    placeholder="{{ user.boat_maxwind }}"
+  /><input
+    type="number"
+    name="boat_maxwave"
+    placeholder="{{ user.boat_maxwave }}"
+  />
+  <input type="submit" value="Update Profile" />
+</form>

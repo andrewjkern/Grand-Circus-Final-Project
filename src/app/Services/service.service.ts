@@ -15,6 +15,9 @@ export class ServiceService {
   currentWeather = (): any => {
     return this.httpClient.get(`https://api.openweathermap.org/data/2.5/forecast?zip=48350&appid=392f6048b43be686e36404f5b294ec59` );
   };
+  createUser = (user): any =>{
+    return this.httpClient.post("http://localhost:3000/create",user)
+  }
 getBuoys () : any{
 return this.httpClient.get("https://glbuoys.glos.us/static/Buoy_tool/data/meta_english.json")
 }
@@ -27,6 +30,7 @@ return this.httpClient.get("https://glbuoys.glos.us/static/Buoy_tool/data/meta_e
   };
 
 }
+
 
 
 
