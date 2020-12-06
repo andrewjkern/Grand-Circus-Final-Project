@@ -19,10 +19,10 @@ swim_maxwave INT NOT NULL DEFAULT '3',
 boat_minair INT NOT NULL DEFAULT '50',
 boat_minwater INT NOT NULL DEFAULT '50',
 boat_maxwind INT NOT NULL DEFAULT '25',
-boat_maxwave INT NOT NULL DEFAULT '8',
-)
+boat_maxwave INT NOT NULL DEFAULT '8'
+);
 
 INSERT INTO
 glos_users (firstname, lastname, email, password)
 VALUES
-('Test', 'User', 'test@grandcircus.com', 'testuser')
+('Test', 'User', 'test@grandcircus.com', 'testuser' )

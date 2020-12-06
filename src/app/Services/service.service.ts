@@ -18,12 +18,20 @@ export class ServiceService {
   weatherByLatLon = (): any => {
     return this.httpClient.get(`https://api.openweathermap.org/data/2.5/forecast/climate?lat=351&lon=139&appid=17c2dcbf565359f7101c4ad856a515d`)
   };
+  createUser = (user): any =>{
+    return this.httpClient.post("http://localhost:3000/create",user)
+  }
 getBuoys () : any{
 return this.httpClient.get("https://glbuoys.glos.us/static/Buoy_tool/data/meta_english.json")
 }
   practiceGlos = (): any => {
     return this.httpClient.get(`http://data.glos.us/erddap/tabledap/45013.json?&time%3E=2020-10-21T00%3A00%3A00Z&time%3C=2020-10-28T21%3A30%3A00Z` );
   };
+
+  averageDailyWaterTemp = (): any => {
+    return this.httpClient.get(`https://coastwatch.glerl.noaa.gov/erddap/tabledap/glsea-avgtemps2.json?Year%2CDay%2CSup%2CMich%2CHuron%2CErie%2COnt%2CSt_Clr&Year%3E=2015`);
+  };
+
 }
 
 

@@ -2,8 +2,3 @@
     display: flex;
     flex-direction: column;
 }
-
-.chart-wrapper {
-    height: 500px;
-    width: 500px;
-}

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ServiceService } from '../Services/service.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,6 +8,8 @@ import { ServiceService } from '../Services/service.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+user: any;
+  constructor(private buoyService: ServiceService, private httpClient: HttpClient) {}
 
   glosapi;
 date = ""
@@ -24,7 +27,7 @@ forecast = ""
   //   maxZoom: 15,
   //   minZoom: 8,
   // }
-  constructor(private buoyService: ServiceService) {}
+ 
 
   buoyArray: any[] = [];
 
@@ -41,6 +44,10 @@ forecast = ""
     }, (err) => {
       console.log('Error applying the glosapi call ngmodel')
     });
+    this.httpClient.get(`http://localhost:3000/user/${localStorage.getItem('password')}`).subscribe((result: any) =>{
+      console.log("User Info", result);
+      this.user = result.data[0]
+    })
   }
 handleClick(event) {
   console.log(event)
