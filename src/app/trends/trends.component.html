@@ -2,17 +2,24 @@
 <div class="columns">
     <app-navigation></app-navigation>
 
-    <div
-    class="chart-wrapper">
-        <canvas baseChart 
-            width="100" height="100"
-            [datasets]="lineChartData" 
-            [labels]="lineChartLabels" 
-            [options]="lineChartOptions"
-            [colors]="lineChartColors" 
-            [legend]="lineChartLegend" 
-            [chartType]="lineChartType" 
-            [plugins]="lineChartPlugins">
-        </canvas>
+    <div class="column">
+        <div class="box">
+            <div
+            class="chart-wrapper">
+                <canvas baseChart 
+                    [datasets]="barChartData" 
+                    [labels]="barChartLabels" 
+                    [options]="barChartOptions"
+                    [colors]="barChartColors" 
+                    [legend]="barChartLegend" 
+                    [chartType]="barChartType" 
+                    [plugins]="barChartPlugins">
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="box"></div>
+        <div class="box"></div>
     </div>
 </div>
