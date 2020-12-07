@@ -1,13 +1,37 @@
-<div class="mainContainer">
+<div class="mainContainer box">
 <div>
+    <section class="section">
+        <div class="container">
+          <h1 class="title has-text-centered">Log In</h1>
+        </div>
+    </section>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class=loginForm>
-    E-mail:<input type="text" name="email" id="email" formControlName="email">
-    Password:<input type="text" name="password" id="password" formControlName="password">
-<input type="submit" value="Log In">
+    <div class="field">
+        <p class="control has-icons-left has-icons-right">
+            <input type="text" class="input" name="email" id="email" formControlName="email">
+            <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+        </p>
+    </div>   
+    <div class="field">
+        <p class="control has-icons-left">
+            <input type="text" class="input" name="password" id="password" formControlName="password">
+            <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+        </p>
+    </div>
+    <input type="submit" class="button is-success" value="Log In">
 </form>
 </div>
-<div class="createProfile">
-<h3>New Here?</h3>
-<a routerLink="/create-profile" class="is-active"><button>Create An Account</button></a>
-</div>
+
+    <div class="createProfile">
+        <div class="greyLine"></div>
+            <h3>New Here?</h3>
+            <a routerLink="/create-profile" class="is-active"><button class="button">Create An Account</button></a>
+    </div>
 </div>

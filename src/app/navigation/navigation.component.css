@@ -1,11 +1,12 @@
 aside {
-    margin-left: 10px;
+    margin-left: 30px;
+    margin-right: 100px;
+    margin-top: 20px;
 }
 
 .navbar-brand {
     justify-content: center;
-    position: fixed;
-    top: 100
+    top: 100;
 }
 
 li {

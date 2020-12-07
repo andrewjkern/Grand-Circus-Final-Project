@@ -9,30 +9,54 @@
     class="columns">
         <div class="column">
           <div class="box">
-            <p class="title is-5">Map</p>
             <app-maps (newItemEvent)="handleClick($event)"></app-maps>
           </div>
         </div>
 
-        <div class="column is-narrow-mobile">
+
+
+        <div class="column level">
             <div class="box">
-              <p class="subtitle">Swimming: {{safeSwim}}</p>
+              <p class="title is-5 has-text-centered">Data for Today</p>
+              <div class="level">
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Temperature:</p>
+                    <p class="title is-size-4">{{temperature}}</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Forecast:</p>
+                    <p class="title is-size-4">{{forecast}}</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Wind Speed:</p>
+                    <p class="title is-size-4">{{windSpeed}}</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Wave Height:</p>
+                    <p class="title is-size-4">{{waveHeight}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <p class="subtitle">Swimming:</p>
+              <div>
+                <div>
+                  {{safeSwim}}
+                </div>
+              </div>
               <p class="subtitle">Kayaking: {{safeKayak}}</p>
               <p class="subtitle">Boating:  {{safeBoat}}</p>
-
             </div>
+        </div>    
         </div>
-
-        <div class="column">
-            <div class="box">
-              <p class="title is-5">Data for Today</p>
-              <p class="subtitle">Temperature: {{temperature}}</p>
-              <p class="subtitle">Forecast: {{forecast}}</p>
-              <p class="subtitle">Wind Speed:  {{windSpeed}}</p>
-              <p class="subtitle">Wave Height: {{waveHeight}}</p>
-            </div>
-          </div>
-      </div>
-      
+              
 </div>
 
