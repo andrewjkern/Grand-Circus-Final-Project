@@ -16,15 +16,16 @@
 
         <div class="column is-narrow-mobile">
             <div class="box">
-              <p class="title is-5">Water Quality Box</p>
-              <p class="subtitle">Safe or not.</p>
+              <p class="subtitle">Swimming: {{safeSwim}}</p>
+              <p class="subtitle">Kayaking: {{safeKayak}}</p>
+              <p class="subtitle">Boating:  {{safeBoat}}</p>
+
             </div>
         </div>
 
         <div class="column">
             <div class="box">
               <p class="title is-5">Data for Today</p>
-              <p class="subtitle">{{date | date:"short"}}</p>
               <p class="subtitle">Temperature: {{temperature}}</p>
               <p class="subtitle">Forecast: {{forecast}}</p>
               <p class="subtitle">Wind Speed:  {{windSpeed}}</p>

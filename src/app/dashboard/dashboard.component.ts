@@ -17,17 +17,9 @@ temperature = ""
 windSpeed = ""
 waveHeight = ""
 forecast = ""
-  // zoom = 12
-  // center: google.maps.LatLngLiteral
-  // options: google.maps.MapOptions = {
-  //   mapTypeId: 'hybrid',
-  //   zoomControl: false,
-  //   scrollwheel: false,
-  //   disableDoubleClickZoom: true,
-  //   maxZoom: 15,
-  //   minZoom: 8,
-  // }
- 
+safeSwim = ""
+safeKayak =""
+safeBoat = ""
 
   buoyArray: any[] = [];
 
@@ -55,12 +47,21 @@ handleClick(event) {
   this.forecast=event.NWSForecast.title[0]
   this.windSpeed=event.NWSForecast.windspeed[0]
   this.waveHeight=event.NWSForecast.waveheight[0]
+  if(event.NWSForecast.temperature[0] <= 75){
+    this.safeSwim = "Not Safe"
+  }else{
+    this.safeSwim = "Safe"
+  }  
+  if(event.NWSForecast.temperature[0] <= 60){
+    this.safeKayak = "Not Safe"
+  }else{
+    this.safeKayak = "Safe"
+  }
+  if(event.NWSForecast.temperature[0] <= 50){
+    this.safeBoat = "Not Safe"
+  }else{
+    this.safeBoat = "Safe"
+  }
 }
-// waterQualityBasedOnTemp(){
-//   if (this.temperature=< swim_minair){
-//     answer = "Not safe"
-//   }else{
-//     answer = "safe"
-//   }
-// };
+
 }
