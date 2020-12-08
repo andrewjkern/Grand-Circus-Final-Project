@@ -4,8 +4,6 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import {GlosRoutesRoutingModule} from './Routing/routing';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
