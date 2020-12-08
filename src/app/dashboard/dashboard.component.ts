@@ -13,20 +13,14 @@ user: any;
 
   glosapi;
 date = ""
-temperature = ""
+temperature;
 windSpeed = ""
 waveHeight = ""
-  // zoom = 12
-  // center: google.maps.LatLngLiteral
-  // options: google.maps.MapOptions = {
-  //   mapTypeId: 'hybrid',
-  //   zoomControl: false,
-  //   scrollwheel: false,
-  //   disableDoubleClickZoom: true,
-  //   maxZoom: 15,
-  //   minZoom: 8,
-  // }
- 
+forecast = ""
+safeSwim = ""
+safeKayak =""
+safeBoat = ""
+safetyRating: boolean = false;
 
   buoyArray: any[] = [];
 
@@ -51,8 +45,30 @@ waveHeight = ""
 handleClick(event) {
   console.log(event)
   this.temperature=event.NWSForecast.temperature[0]
+  this.forecast=event.NWSForecast.title[0]
   this.windSpeed=event.NWSForecast.windspeed[0]
   this.waveHeight=event.NWSForecast.waveheight[0]
+  if(event.NWSForecast.temperature[0] <= 75){
+    this.safeSwim = "Not Safe"
+    this.temperature.push(this.safetyRating);
+  }else{
+    this.safeSwim = "Safe"
+    this.temperature.push(this.safetyRating = true);
+  }  
+  if(event.NWSForecast.temperature[0] <= 60){
+    this.safeKayak = "Not Safe"
+    this.safetyRating;
+  }else{
+    this.safeKayak = "Safe"
+    this.safetyRating = true;
+  }
+  if(event.NWSForecast.temperature[0] <= 50){
+    this.safeBoat = "Not Safe"
+    this.safetyRating;
+  }else{
+    this.safeBoat = "Safe"
+    this.safetyRating = true;
+  }
 }
 
 }

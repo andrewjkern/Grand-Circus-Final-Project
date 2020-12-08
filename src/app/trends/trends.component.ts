@@ -13,15 +13,29 @@ import { ServiceService } from '../Services/service.service';
 export class TrendsComponent implements OnInit {
 
   glosapi;
-  lineChartData: ChartDataSets[];
-  lineChartLabels: Label[];
-  lineChartOptions;
-  lineChartColors: Color[];
-  lineChartLegend;
-  lineChartPlugins;
-  lineChartType;
-  waterTemps = [];
+  barChartData: ChartDataSets[];
+  barChartLabels: Label[];
+  barChartOptions;
+  barChartColors: Color[];
+  barChartLegend;
+  barChartPlugins;
+  barChartType;
   waterTempsLabels = [];
+  lakeMichiganTemps = [];
+  lakeMich = [];
+  lakeHuronTemps = [];
+  lakeHuron = [];
+  lakeErieTemps = [];
+  lakeErie = [];
+  lakeSuperiorTemps = [];
+  lakeSup = [];
+  lakeOntarioTemps = [];
+  lakeOnt = [];
+
+  convertToF = (celsius: number) => {
+    let far = celsius * 9/5 + 32;
+    return far;
+  }
 
 
   constructor(private buoyService: ServiceService) { }
@@ -31,41 +45,69 @@ export class TrendsComponent implements OnInit {
       console.log('result', result);
     });
 
-    this.buoyService.practiceGlos().subscribe((result: any) => {
-      console.log('result', result);
+    this.buoyService.averageDailyWaterTemp().subscribe((result: any) => {
       this.glosapi = result;
+      console.log("This is the api call", this.glosapi);
+
       this.glosapi.table.rows.forEach(row => {
-        this.waterTemps.push(row[13]);
+        this.lakeSup.push([row[0], this.convertToF(row[2])]);
+        this.lakeMich.push([row[0], this.convertToF(row[3])]);
+        this.lakeHuron.push([row[0], this.convertToF(row[4])]);
+        this.lakeErie.push([row[0], this.convertToF(row[5])]);
+        this.lakeOnt.push([row[0], this.convertToF(row[6])]);
         this.waterTempsLabels.push(row[0]);
+        
+        this.waterTempsLabels.sort((a,b) => {
+          if (a > b ) return 1;
+          if (a < b) return -1;
+          return 0;
+        })
       })
-      console.log(this.waterTemps);
       this.setData();
     }, (err) => {
       console.log('Error applying the glosapi call')
     });
   }
 
+  //LakeSup is an array containing many arrays, each with a year + temp 
+  //Filter each array based on year
+  //Need average of each Lake Temp for each year, should have 5 bars for each year
+
+
   setData = () => {
-    this.lineChartData = [
-      { data: this.waterTemps, label: 'Water Temperature' },
+    // let supAverageTemp = this.lakeSuperiorTemps.reduce((a, b) => {
+    //   return (a + b)
+    // })/this.lakeSuperiorTemps.length;
+  
+
+    this.barChartData = [
+      { data:this.lakeSuperiorTemps, label: 'Lake Superior' },
+      { data: this.lakeMichiganTemps, label: 'Lake Michigan' },
+      { data: this.lakeErieTemps, label: 'Lake Erie' },
+      { data: this.lakeOntarioTemps, label: 'Lake Ontario' },
+      { data: this.lakeHuronTemps, label: 'Lake Huron' },
     ];
 
-    this.lineChartLabels = this.waterTempsLabels;
+    this.barChartLabels = ['2015', '2016', '2017', '2018', '2019', '2020'];
 
-    this.lineChartOptions = {
+    this.barChartOptions = {
       responsive: true,
+      title: {
+        text: 'Great Lakes Average Temperature By Year',
+        display: true
+      }
     };
 
-    this.lineChartColors = [
+    this.barChartColors = [
       {
         borderColor: 'black',
-        backgroundColor: 'rgba(255,255,0,0.28)',
+        backgroundColor: 'rgba(57,151,181, 1)',
       },
     ];
 
-    this.lineChartLegend = true;
-    this.lineChartPlugins = [];
-    this.lineChartType = 'line';
+    this.barChartLegend = true;
+    this.barChartPlugins = [];
+    this.barChartType = 'bar';
   }
 }
 
