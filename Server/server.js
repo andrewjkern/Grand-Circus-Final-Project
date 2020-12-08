@@ -60,15 +60,14 @@ app.get("/", (req, res) => {
 app.post("/create", (req, res) => {
   client.query(
     `INSERT INTO glos_users (firstname, lastname, email, password)
-    VALUES '${req.body}'`,
-    (err, data) => {
+    VALUES ('${req.body.firstname}', '${req.body.lastname}','${req.body.email}','${req.body.password}')`);
+    
       res.json({
         msg: "New User Added",
         user: req.body,
       });
     }
   );
-});
 
 
 app.put("/update/:password", (req, res) => {

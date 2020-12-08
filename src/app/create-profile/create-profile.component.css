@@ -1,12 +1,18 @@
-.createProfile{
-    display: flex;
-    flex-direction: column;
-    width: 25%;
+.formContainer{
+width: 60%;
+height: 60%;
+border: black 1px solid;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
-/* .name{
+p{}
+
+.name{
     display: flex;
     flex-direction: row;
-} */
+}
 .check{
     display: flex;
     flex-direction: row;

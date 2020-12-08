@@ -1,15 +1,13 @@
-<app-navigation></app-navigation>
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="createProfile">
+<div class="formContainer">
+<h1>CREATE AN ACCOUNT</h1>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <div class="name">
-    First Name<input  type="text" formControlName="firstname">
-    Last Name<input  type="text" formControlName="lastname">
+    First Name<input name="firstname" type="text" formControlName="firstname">
+    Last Name<input name="lastname" type="text" formControlName="lastname">
 </div>
-    E-Mail Address<input type="email" formControlName="email">
-    Opt In to Newsletter?<input class="check" type="checkbox" formControlName="optin">
-    Password<input type="text" formControlName="password">
-    <p>My Favorite Water Activities Are:</p>
-    <div class="check">Swimming<input type="checkbox" formControlName="swims"></div>
-    <div class="check">Kayaking<input type="checkbox" formControlName="kayaks"></div>
-    <div class="check">Boating<input type="checkbox" formControlName="boats"></div>
-    <input type="submit" value="Create Profile">
+    E-Mail Address<input type="email" name="email" formControlName="email">
+    <p>*E-Mail is for login purposes only. GLOS will not send you any e-mails</p>
+    Password<input type="text" name="password" formControlName="password">
+        <input type="submit" value="Create Profile" />
 </form>
+</div>

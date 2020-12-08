@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ServiceService } from '../Services/service.service';
 import { HttpClient } from '@angular/common/http';
+import {GoogleMap} from '@angular/google-maps'
 
 @Component({
   selector: 'app-dashboard',
