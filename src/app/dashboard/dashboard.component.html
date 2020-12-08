@@ -18,7 +18,7 @@
         <div class="column level">
             <div class="box">
               <p class="title is-5 has-text-centered">Data for Today</p>
-              <div class="level">
+
                 <div class="level-item has-text-centered">
                   <div>
                     <p class="heading">Temperature:</p>
@@ -43,18 +43,21 @@
                     <p class="title is-size-4">{{waveHeight}}</p>
                   </div>
                 </div>
-              </div>
+ 
             </div>
-            <div class="box">
-              <p class="subtitle">Swimming:</p>
-              <div>
-                <div>
-                  {{safeSwim}}
+
+            <div [ngClass]="{'is-danger': safeSwim === 'Not Safe',
+          'is-success': safeSwim === 'Safe'}" class="notification is-light"> 
+              Swimming: {{safeSwim}}
+            </div>
+            <div [ngClass]="{'is-danger': safeSwim === 'Not Safe',
+            'is-success': safeSwim === 'Safe'}" class="notification is-light"> 
+            Kayaking: {{safeKayak}}
+              </div>
+              <div [ngClass]="{'is-danger': safeSwim === 'Not Safe',
+              'is-success': safeSwim === 'Safe'}" class="notification is-light"> 
+              Boating:  {{safeBoat}}
                 </div>
-              </div>
-              <p class="subtitle">Kayaking: {{safeKayak}}</p>
-              <p class="subtitle">Boating:  {{safeBoat}}</p>
-            </div>
         </div>    
         </div>
               
