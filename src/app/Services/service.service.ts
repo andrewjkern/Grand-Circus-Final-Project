@@ -20,7 +20,10 @@ export class ServiceService {
   };
   createUser = (user): any =>{
     return this.httpClient.post("http://localhost:3000/create",user)
-  }
+  };
+updateUser = (user): any =>{
+  return this.httpClient.put(`http://localhost:3000/update/${localStorage.getItem('password')}`,user)
+}
 getBuoys () : any{
 return this.httpClient.get("https://glbuoys.glos.us/static/Buoy_tool/data/meta_english.json")
 }

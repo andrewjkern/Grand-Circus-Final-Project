@@ -5,67 +5,94 @@
     name="firstname"
     id="Name"
     placeholder="{{ user.firstname }}"
-    value="{{user.firstname}}"
+    value="{{ user.firstname }}"
+    formControlName="firstname"
   />
   <input
     type="text"
     name="lastname"
     id="Name"
     placeholder="{{ user.lastname }}"
+    value="{{ user.lastname }}"
+    formControlName="lastname"
   />
 
-  <input type="email" name="email" id="email" placeholder="{{ user.email }}" />
+  <input type="email" name="email" id="email" placeholder="{{ user.email }}" formControlName="email"/>
   <input
     type="number"
     name="kayak_minair"
     placeholder="{{ user.kayak_minair }}"
+    value="{{ user.kayak_minair }}"
+    formControlName="email"
   />
   <input
     type="number"
     name="kayak_minwater"
     placeholder="{{ user.kayak_minwater }}"
+    value="{{ user.kayak_minwater }}"
+    formControlName="kayak_minwater"
   /><input
     type="number"
     name="kayak_maxwind"
     placeholder="{{ user.kayak_maxwind }}"
+    value="{{ user.kayak_maxwind }}"
+    formControlName="kayak_maxwind"
   /><input
     type="number"
     name="kayak_maxwave"
     placeholder="{{ user.kayak_maxwave }}"
+    value="{{ user.kayak_maxwave }}"
+    formControlName="kayak_maxwave"
   /><input
     type="number"
     name="swim_minair"
     placeholder="{{ user.swim_minair }}"
+    value="{{ user.swim_minair }}"
+    formControlName="swim_minair"
   />
   <input
     type="number"
     name="swim_minwater"
     placeholder="{{ user.swim_minwater }}"
+    value="{{ user.swim_minwater }}"
+    formControlName="swim_minwater"
   /><input
     type="number"
     name="swim_maxwind"
     placeholder="{{ user.swim_maxwind }}"
+    value="{{ user.swim_maxwind }}"
+    formControlName="swim_maxwind"
   /><input
     type="number"
     name="swim_maxwave"
     placeholder="{{ user.swim_maxwave }}"
+    value="{{ user.swim_maxwave }}"
+    formControlName="swim_maxwave"
   /><input
     type="number"
     name="boat_minair"
     placeholder="{{ user.boat_minair }}"
+    value="{{ user.boat_minair }}"
+    formControlName="boat_minair"
   />
   <input
     type="number"
     name="boat_minwater"
     placeholder="{{ user.boat_minwater }}"
+    value="{{ user.boat_minwater }}"
+    formControlName="boat_minwater"
   /><input
     type="number"
     name="boat_maxwind"
     placeholder="{{ user.boat_maxwind }}"
+    value="{{ user.boat_maxwind }}"
+    formControlName="boat_maxwind"
   /><input
     type="number"
     name="boat_maxwave"
     placeholder="{{ user.boat_maxwave }}"
+    value="{{ user.boat_maxwave }}"
+    formControlName="boat_maxwave"
   />
   <input type="submit" value="Update Profile" />
 </form>
