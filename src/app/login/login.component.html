@@ -2,7 +2,7 @@
 <div>
     <section class="section">
         <div class="container">
-          <h1 class="title has-text-centered">Log In</h1>
+          <img src="https://www.glos.us/wp-content/themes/optimizer-child/img/GLOS_FinalLogoRBG_edit.png" width="250px">
         </div>
     </section>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class=loginForm>
@@ -25,13 +25,15 @@
               </span>
         </p>
     </div>
-    <input type="submit" class="button is-success" value="Log In">
-</form>
-</div>
+    <div class="centerButton">
+        <input type="submit" class="button is-success" value="Log In">
+    </div>
 
     <div class="createProfile">
         <div class="greyLine"></div>
             <h3>New Here?</h3>
             <a routerLink="/create-profile" class="is-active"><button class="button">Create An Account</button></a>
     </div>
+</form>
+</div>
 </div>

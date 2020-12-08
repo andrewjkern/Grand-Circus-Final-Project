@@ -1,11 +1,19 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 50%;
-  position: absolute;
-  left: 25%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 100px;
   top: 25%;
+  justify-content: center;
+}
+
+html {
+  background: rgba(57, 151, 181, .3);
+}
+
+.container {
+  display: flex;
   justify-content: center;
 }
 
@@ -13,8 +21,6 @@ form {
   display: flex;
   flex-direction: column;
   justify-items: center;
-  margin-left: 25%;
-  margin-right: 25%;
 }
 
 .createProfile {
@@ -22,6 +28,7 @@ form {
   flex-direction: column;
   align-items: center;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .greyLine {
@@ -30,4 +37,13 @@ form {
   margin: 10px;
 }
 
+.centerButton {
+  display: flex;
+  justify-content: center;
+}
+
+.is-success {
+  width: 165px;
+  background-color: rgb(57, 151, 181);
+}
 
