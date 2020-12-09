@@ -1,4 +1,4 @@
-<aside class="menu">
+<aside class="menu pl-6 mt-3 mr-4 box stretch">
   <div class="navbar-brand">
     <a class="navbar-item" href="https://www.glos.us/">
       <img src="https://www.glos.us/wp-content/themes/optimizer-child/img/GLOS_FinalLogoRBG_edit.png" alt="Great Lakes Observing System" width="150">
@@ -7,26 +7,32 @@
     <p class="menu-label">
       General
     </p>
-    <ul class="menu-list">
-      <li><a routerLink="/dashboard" class="">Dashboard</a></li>
+    <ul class="menu-list level level-left">
+
+      <li class="menu-list level level-left">
+        <i class="fas fa-columns"></i>
+        <a routerLink="/dashboard">Dashboard</a></li>
     </ul>
+    
     <p class="menu-label">
       Data
     </p>
-    <ul class="menu-list">
-      <li><a routerLink="/trends">Trends</a></li>
+    <ul class="menu-list level level-left">
+      <li class="menu-list level level-left"><i class="fas fa-chart-line"></i><a routerLink="/trends">Trends</a></li>
     </ul>
     <p class="menu-label">
       Administration
     </p>
-    <ul class="menu-list">
-      <li><a routerLink="/profile">Edit Profile</a></li>
+    <ul class="menu-list level level-left">
+      
+      <li class="menu-list level level-left"><i class="far fa-edit"></i><a routerLink="/profile">Edit Profile</a></li>
     </ul>
     <p class="menu-label">
       Contact
     </p>
-    <ul class="menu-list">
-      <li><a routerLink="/contact">Contact Us</a></li>
+    <ul class="menu-list level level-left">
+
+      <li class="menu-list level level-left"><i class="far fa-address-book"></i><a routerLink="/contact" >Contact Us</a></li>
     </ul>
   </aside>
 

@@ -1,5 +1,6 @@
 
-<h1 class="title is-4 has-text-centered">{{ title }}</h1>
+          <p class="heading">Great Lakes Observing System</p>
+          <p class="title is-size-6">Great Lakes Buoys</p>
 <google-map [center]="center" [zoom]="zoom">
   <map-marker #marker="mapMarker" *ngFor="let buoy of buoys; index as i" [position]="buoy.position" [label]="buoy.id"
     (mapClick)="openInfoWindow(marker, i)"></map-marker>

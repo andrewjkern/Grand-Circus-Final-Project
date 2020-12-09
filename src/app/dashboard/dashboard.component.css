@@ -1,13 +1,4 @@
-.mainContainer {
+.mapbox {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
 }
-
-@media only screen and (max-width: 600px) {
-    .mainContainer {
-        display: flex;
-        flex-direction: column;
-    }
-
-    
-  }
