@@ -1,13 +1,12 @@
-<div class="formContainer">
+<div class="formContainer box">
+    <div class="imgContainer">
+<img src="https://www.glos.us/wp-content/themes/optimizer-child/img/GLOS_FinalLogoRBG_edit.png" width="250px"></div>
 <h1>CREATE AN ACCOUNT</h1>
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-    <div class="name">
-    First Name<input name="firstname" type="text" formControlName="firstname">
-    Last Name<input name="lastname" type="text" formControlName="lastname">
-</div>
-    E-Mail Address<input type="email" name="email" formControlName="email">
-    <p>*E-Mail is for login purposes only. GLOS will not send you any e-mails</p>
-    Password<input type="text" name="password" formControlName="password">
-        <input type="submit" value="Create Profile" />
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()"> 
+  <div class="field">  <input class="input" name="firstname" type="text" formControlName="firstname" placeholder="First Name"></div>
+  <div class="field">  <input class="input" name="lastname" type="text" formControlName="lastname"placeholder="Last Name"></div>
+  <div class="field">  <input class="input" type="email" name="email" formControlName="email"placeholder="E-Mail Address"><p>*GLOS will not send you any e-mails</p></div>
+    <div class="field"> <input class="input" type="text" name="password" formControlName="password" placeholder="Choose a Password"></div>
+        <input  class ="button is-success" type="submit" value="Create Profile" />
 </form>
 </div>

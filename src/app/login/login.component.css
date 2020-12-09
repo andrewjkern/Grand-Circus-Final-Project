@@ -40,6 +40,8 @@ form {
 .centerButton {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .is-success {
