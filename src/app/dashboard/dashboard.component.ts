@@ -57,8 +57,8 @@ handleClick(event) {
   this.waveHeight=event.NWSForecast.waveheight[0]
   this.buoyID=event.id;
   this.mostRecentTime=event.updateTime;
-  if(event.NWSForecast.temperature[0] <= 70){
-    this.safeSwim = "Based on these temperatures, it may not be safe to go swimming at this time."
+  if(event.NWSForecast.temperature[0] <= this.user.swim_minair){
+    this.safeSwim = "Based on your preferences, it may be too cold to go swimming."
     this.swimSafeIcon = "/assets/exclamation-circle-solid.svg";
 
   }else{
@@ -66,8 +66,8 @@ handleClick(event) {
     this.swimSafeIcon = "/assets/check-solid.svg"
     this.hideIcon = true;
   }  
-  if(event.NWSForecast.temperature[0] <= 60){
-    this.safeKayak = "Based on these temperatures, it may not be safe to go kayaking at this time."
+  if(event.NWSForecast.temperature[0] <= this.user.kayak_minair){
+    this.safeKayak = "Based on your preferences, it may not be safe to go kayaking at this time."
     this.kayakSafeIcon = "/assets/exclamation-circle-solid.svg";
     this.hideIcon = true;
   }else{
@@ -75,8 +75,8 @@ handleClick(event) {
     this.kayakSafeIcon = "/assets/check-solid.svg";
     this.hideIcon = true;
   }
-  if(event.NWSForecast.temperature[0] <= 50){
-    this.safeBoat = "Based on these temperatures, it may not be safe to go boating at this time."
+  if(event.NWSForecast.temperature[0] <= this.user.boat_minair){
+    this.safeBoat = "Based on your preferences, it may not be a good day to go boating."
     this.safeBoatIcon = "/assets/exclamation-circle-solid.svg";
     this.hideIcon = true;
   }else{
