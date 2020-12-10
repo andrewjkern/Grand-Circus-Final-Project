@@ -63,6 +63,7 @@ export class TrendsComponent implements OnInit {
 
     this.buoyService.averageDailyWaterTemp().subscribe((result: any) => {
       this.glosapi = result;
+      console.log("GLOS API", this.glosapi)
 
       this.twenty15 = this.glosapi.table.rows.filter(data => data[0] === 2015);
       this.twenty16 = this.glosapi.table.rows.filter(data => data[0] === 2016);
@@ -79,21 +80,18 @@ export class TrendsComponent implements OnInit {
       this.twenty20temps = this.sortByLake(this.twenty20);
 
       this.twenty15Average = this.getAverages(this.twenty15temps);
-      console.log("Hey does this work", this.twenty15Average)
       this.twenty16Average = this.getAverages(this.twenty16temps);
-      
+      this.twenty17Average = this.getAverages(this.twenty17temps);
+      this.twenty18Average = this.getAverages(this.twenty18temps);
+      this.twenty19Average = this.getAverages(this.twenty19temps);
+      this.twenty20Average = this.getAverages(this.twenty20temps);
 
       this.glosapi.table.rows.forEach(row => {
 
         this.waterTempsLabels.push(row[0]);
-        
-        this.waterTempsLabels.sort((a,b) => {
-          if (a > b ) return 1;
-          if (a < b) return -1;
-          return 0;
-        })
       })
       this.setData();
+      this.setLakeData();
 
     }, (err) => {
       console.log('Error applying the glosapi call')
@@ -111,7 +109,12 @@ sortByLake = (temp: any[]) => {
 }
 
 setLakeData = () => {
-  this.lakeSup = [this.twenty15Average[0], this.twenty16Average[0], this.twenty17Average[0], this.twenty18Average[0], this.twenty19Average[0], this.twenty20Average];}
+  this.lakeSup.push(this.twenty15Average[0], this.twenty16Average[0], this.twenty17Average[0], this.twenty18Average[0], this.twenty19Average[0], this.twenty20Average[0]);
+  this.lakeMich.push(this.twenty15Average[1], this.twenty16Average[1], this.twenty17Average[1], this.twenty18Average[1], this.twenty19Average[1], this.twenty20Average[1]);
+  this.lakeHuron.push(this.twenty15Average[2], this.twenty16Average[2], this.twenty17Average[2], this.twenty18Average[2], this.twenty19Average[2], this.twenty20Average[2]);
+  this.lakeErie.push(this.twenty15Average[3], this.twenty16Average[3], this.twenty17Average[3], this.twenty18Average[3], this.twenty19Average[3], this.twenty20Average[3]);
+  this.lakeOnt.push(this.twenty15Average[4], this.twenty16Average[4], this.twenty17Average[4], this.twenty18Average[4], this.twenty19Average[4], this.twenty20Average[4]);
+}
 
 getAverages = (temp: any[]) => {
   let averagesArray = [];
@@ -119,13 +122,17 @@ getAverages = (temp: any[]) => {
     let total = 0;
     for (let i =0; i < temp[z].length; i++) {
       total = temp[z][i] + total
-  } averagesArray.push(this.convertToF(total/temp[z].length));
+  } averagesArray.push(this.convertToF(total/temp[z].length).toFixed(2));
   } return averagesArray;
 }
 
   setData = () => {
     this.barChartData = [
-      { data:this.lakeSup, label: 'Lake Superior' },
+      { data: this.lakeSup, label: 'Lake Superior' },
+      { data: this.lakeMich, label: 'Lake Michigan' },
+      { data: this.lakeHuron, label: 'Lake Huron' },
+      { data: this.lakeErie, label: 'Lake Erie' },
+      { data: this.lakeOnt, label: 'Lake Ontario' },
     ];
 
     this.barChartLabels = ['2015', '2016', '2017', '2018', '2019', '2020'];
@@ -134,14 +141,13 @@ getAverages = (temp: any[]) => {
       responsive: true,
       title: {
         text: 'Great Lakes Average Temperature By Year',
-        display: true
-      }
+        display: false      }
     };
 
     this.barChartColors = [
       {
         borderColor: 'black',
-        backgroundColor: 'rgba(57,151,181, 1)',
+        backgroundColor: 'rgba(57,151,181, .5)',
       },
     ];
 

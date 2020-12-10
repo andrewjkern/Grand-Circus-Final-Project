@@ -28,6 +28,7 @@ safeBoatIcon = "";
 hideIcon = false;
 buoyID;
 mostRecentTime;
+showBuoy = false;
 
   buoyArray: any[] = [];
 
@@ -84,6 +85,7 @@ handleClick(event) {
     this.safeBoatIcon = "/assets/check-solid.svg";
     this.hideIcon = true;
   }
+  this.showBuoy = true;
 }
 
 }
