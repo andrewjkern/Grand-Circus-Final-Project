@@ -2,6 +2,10 @@ html {
     background: rgba(57, 151, 181, .3);
   }
 
+  
+  .sidenav{position: fixed;
+  left: 0}
+
 .mainContainer{  display: flex;
     flex-direction: column;
     margin-left: 25%;
