@@ -1,11 +1,5 @@
 .mainContainer {
-  display: flex;
-  flex-direction: column;
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 100px;
-  top: 25%;
-  justify-content: center;
+  height: 100vh;
 }
 
 html {
@@ -15,12 +9,6 @@ html {
 .container {
   display: flex;
   justify-content: center;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
 }
 
 .createProfile {
@@ -47,5 +35,10 @@ form {
 .is-success {
   width: 165px;
   background-color: rgb(57, 151, 181);
+}
+
+form {
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
