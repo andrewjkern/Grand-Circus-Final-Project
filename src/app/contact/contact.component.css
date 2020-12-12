@@ -1,78 +1,123 @@
-.mainContainer{
-    display: flex;
-    flex-direction: column;
-    height: 700px;
-    width: 100%;
-    /* border: solid 1px blue; */
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  width: 100%;
+  /* border: solid 1px blue; */
 }
-h1{
-    width: 50%;
-    text-align: center;
-    font-size: xx-large;
-    border: solid blue 1px ;
-}
-.contactHeader{
-display: flex;
-align-items: center;
-justify-content: center;
-height: 15%;
-width: auto;
-border: solid 1px black}
-
-.infoBoxes{
-display: flex;
-flex-direction: row;
-justify-content: center;
-height: 400px;
-width: 100%}
-
-.information{
-border: solid 1px black;
-width: 33%;
-display: flex;
-flex-direction: column;
-align-items: center;
-/* justify-content: center; */
+h1 {
+  width: 50%;
+  height: 60%;
+  text-align: center;
+  font-size: xx-large;
+  
+  color: white;
+  border-bottom: 3px solid rgb(57, 151, 181);
 }
 
-h2{
-width: 100%;
-text-align: center;
-font-size: x-large;}
-
-.mapBox{
-    width:100%;
-    height:75%;
-    margin: 10px;
+.contactHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15%;
+  width: auto;
 }
 
-.socials{
-display: flex;
-flex-direction: row;
-justify-content: center;
-height: 50%;
-width: 100%;}
-
-.hashtags{
-display: flex;
-flex-direction: column;
-align-items: center;
+.infoBoxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
 }
 
-.getinvolved{
+.information {
+  margin: auto 10px;
+  width: 33%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  box-shadow: lightgray 3px;
+  justify-content: space-around;
+}
+
+.headline{  
+    border-bottom: 1px lightgrey solid;}
+
+.contactInfo{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-i{
-   width: 50px;
-   height: 50px
+h2 {
+  width: 100%;
+  text-align: center;
+  font-size: x-large;
+}
+
+.mapBox {
+  widows: 75%;
+  height: 75%;
+  margin: 10px;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+  height: 50%;
+  width: 100%;
+}
+
+.socialIcons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+}
+
+.hashtags {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
+}
+
+.hashLinks{}
+
+.emailUs{    display: flex;
+    flex-direction: column;
+    align-items: center;
+height: 50%;}
+
+.emails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.getinvolved {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
+}
+
+.needHelp{}
+
+i {
+  width: 50px;
+  height: 50px;
 }
 @media only screen and (min-width: 1023px) {
-    .nav{
-position: absolute;
-left: 0;
-    }
+  .nav {
+    position: absolute;
+    left: 0;
+  }
 }
