@@ -13,11 +13,29 @@ nav {
 }
 
 .navbar-brand{
-    position: fixed;
+    position: absolute;
     left: 0;
 
+}
+
+.navbar-end{
+    position: fixed;
+    right: 0%;
 }
 
 #navbarBasicExample{
     background-color: rgb(249, 249, 249)
 }
+
+@media screen and (max-width: 1023px){
+.navbar-menu.is-active {
+    display: flex;
+}
+
+
+
+}
+
+@media screen and (max-width: 759px){.icon{
+    display: none;
+}}

@@ -13,7 +13,14 @@ aside {
 li {
     margin-right: 2%;
     margin-left: 2%;
+    display: flex;
+    align-items: center;
 }
+
+a:hover{
+    background-color: lightgrey;
+}
+
 
 @media only screen and (max-width: 760px) {
 aside{
@@ -27,7 +34,8 @@ aside{
     justify-content: center;
     align-items: center;
     bottom: 0;
-    background-color: lightgrey
+    background-color: lightgrey;
+    z-index: 30
 }
 p{display: none;}
 
@@ -42,10 +50,21 @@ ul{
 li{
     display: flex;
     flex-direction: column;
+    
 
+}
+
+a:hover{
+    background-color: white;
 }
 
 .level{
     margin-top: auto;
     margin-bottom: auto;
+}
+
+@media only screen and (max-width: 320px){
+.anchor{
+    display: none;
+}
 }
