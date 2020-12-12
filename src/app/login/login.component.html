@@ -1,42 +1,72 @@
-<div class="mainContainer box">
-<div>
-    <section class="section">
-        <div class="container">
-          <img src="https://www.glos.us/wp-content/themes/optimizer-child/img/GLOS_FinalLogoRBG_edit.png" width="250px">
+<div class="columns mainContainer is-vcentered is-centered">
+  <div class="column box is-vcentered is-centered is-half">
+    <div class="container mt-4">
+      <img
+        src="https://www.glos.us/wp-content/themes/optimizer-child/img/GLOS_FinalLogoRBG_edit.png"
+        width="250px"
+      />
+    </div>
+   
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      class="loginForm mt-5"
+    >
+    <article class="message is-info is-centered">
+        <div class="message-body is-centered">
+            <p class="is-size-4">Hello visitors,</p>
+            <p class=" is-size-6">Please use the following credentials or create your own temporary profile.</p>
+            <p>Email Address: <strong>test@grandcircus.com</strong></p>
+            <p>Password: <strong>testuser</strong></p>
         </div>
-    </section>
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class=loginForm>
-    <div class="field">
+    </article>
+      <div class="field">
         <p class="control has-icons-left has-icons-right">
-            <input type="text" class="input" name="email" id="email" formControlName="email">
-            <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
-              </span>
+          <input
+            type="text"
+            class="input"
+            name="email"
+            id="email"
+            formControlName="email"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
         </p>
-    </div>   
-    <div class="field">
+      </div>
+      <div class="field">
         <p class="control has-icons-left">
-            <input type="text" class="input" name="password" id="password" formControlName="password">
-            <span class="icon is-small is-left">
-                <i class="fas fa-lock"></i>
-              </span>
+          <input
+            type="text"
+            class="input"
+            name="password"
+            id="password"
+            formControlName="password"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
         </p>
-    </div>
-    <div class="centerButton">
-        <input type="submit" class="button is-success" value="Log In">
-        <p>Hello Visitors! Please use the following credentials or create your own temporary profile!</p>
-        <p>E-Mail Address: <b>test@grandcircus.com</b></p>
-        <p>Password: <b>testuser</b></p>
-    </div>
+      </div>
+      <div class="centerButton mt-3">
+        <input
+          type="submit"
+          class="button is-success mt-3 mb-3"
+          value="Log In"
+        />
 
-    <div class="createProfile">
+      </div>
+
+      <div class="createProfile">
         <div class="greyLine"></div>
-            <h3>New Here?</h3>
-            <a routerLink="/create-profile" class="is-active"><button class="button">Create An Account</button></a>
-    </div>
-</form>
-</div>
+        <h3>New Here?</h3>
+        <a routerLink="/create-profile" class="is-active"
+          ><button class="button mt-2">Create An Account</button></a
+        >
+      </div>
+    </form>
+  </div>
 </div>
