@@ -94,7 +94,8 @@ h2 {
 .emailUs{    display: flex;
     flex-direction: column;
     align-items: center;
-height: 50%;}
+height: 50%;
+width: 100%}
 
 .emails{
     display: flex;
@@ -116,8 +117,35 @@ i {
   height: 50px;
 }
 @media only screen and (min-width: 1023px) {
+ 
   .nav {
     position: absolute;
     left: 0;
   }
+}
+
+@media only screen and (max-width: 760px){
+
+    .mainContainer{
+        height: auto;
+        align-items: center;
+    }
+    .contactHeader{
+        width: 100%;
+    }
+    .infoBoxes{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 75%;
+        height: 33%;
+    }
+    .information{
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        margin-top: 20px;
+    }
 }
