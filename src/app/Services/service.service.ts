@@ -35,6 +35,10 @@ return this.httpClient.get("https://glbuoys.glos.us/static/Buoy_tool/data/meta_e
     return this.httpClient.get(`https://coastwatch.glerl.noaa.gov/erddap/tabledap/glsea-avgtemps2.json?Year%2CDay%2CSup%2CMich%2CHuron%2CErie%2COnt%2CSt_Clr&Year%3E=2015`);
   };
 
+  westErieHABS = (): any => {
+    return this.httpClient.get(`http://data.glos.us/erddap/tabledap/glerlwe13.json?time%2Cstation_name%2Cysi_blue_green_algae&time%3E=2019-06-22T00%3A00%3A00Z&time%3C=2019-08-06T14%3A31%3A00Z`)
+  }
+
 }
 
 
