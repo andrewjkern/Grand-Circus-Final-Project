@@ -11,9 +11,9 @@ export class DashboardComponent implements OnInit {
 user: any;
   constructor(private buoyService: ServiceService, private httpClient: HttpClient) {}
 
-  glosapi;
+glosapi;
 date = ""
-temperature;
+temperature = "";
 windSpeed = ""
 waveHeight = ""
 forecast = ""
@@ -50,24 +50,24 @@ handleClick(event) {
   this.waveHeight=event.NWSForecast.waveheight[0]
   if(event.NWSForecast.temperature[0] <= 75){
     this.safeSwim = "Not Safe"
-    this.temperature.push(this.safetyRating);
+    // this.temperature.push(this.safetyRating);
   }else{
     this.safeSwim = "Safe"
-    this.temperature.push(this.safetyRating = true);
+    // this.temperature.push(this.safetyRating = true);
   }  
   if(event.NWSForecast.temperature[0] <= 60){
     this.safeKayak = "Not Safe"
-    this.safetyRating;
+    // this.safetyRating;
   }else{
     this.safeKayak = "Safe"
-    this.safetyRating = true;
+    // this.safetyRating = true;
   }
   if(event.NWSForecast.temperature[0] <= 50){
     this.safeBoat = "Not Safe"
-    this.safetyRating;
+    // this.safetyRating;
   }else{
     this.safeBoat = "Safe"
-    this.safetyRating = true;
+    // this.safetyRating = true;
   }
 }
 

@@ -1,7 +1,10 @@
 
 <h1 class="title is-4 has-text-centered">{{ title }}</h1>
 <google-map [center]="center" [zoom]="zoom">
-  <map-marker #marker="mapMarker" *ngFor="let buoy of buoys; index as i" [position]="buoy.position" [label]="buoy.id"
+  <map-marker #marker="mapMarker" *ngFor="let buoy of buoys; index as i" [position]="buoy.position"
     (mapClick)="openInfoWindow(marker, i)"></map-marker>
-  <map-info-window></map-info-window>
+  <map-info-window>
+    <p>{{longName}}</p>
+    <p>{{iD}}</p>
+  </map-info-window>
 </google-map>

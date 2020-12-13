@@ -4,6 +4,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import {GlosRoutesRoutingModule} from './Routing/routing';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts';
+// import MarkerClusterer from '@googlemaps/markerclustererplus';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +21,8 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, FormControl, Validators, ReactiveFormsModule} from '@angular/forms'
 import { TopheaderComponent } from './topheader/topheader.component';
 import { MapsComponent } from './maps/maps.component';
+import { from } from 'rxjs';
+import { ContactMapComponent } from './contactMap/contactMap.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,8 @@ import { MapsComponent } from './maps/maps.component';
     CreateProfileComponent,
     LoginComponent,
     TopheaderComponent,
-    MapsComponent
+    MapsComponent,
+    ContactMapComponent
   ],
   imports: [
     GlosRoutesRoutingModule,
@@ -42,7 +47,8 @@ import { MapsComponent } from './maps/maps.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ChartsModule
+    ChartsModule,
+    // MarkerClusterer,
   ],
   providers: [],
   bootstrap: [AppComponent]
