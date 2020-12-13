@@ -1,4 +1,7 @@
+import { formatDate } from '@angular/common';
+import { NUMBER_TYPE } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { numbers } from '@material/slider';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { ServiceService } from '../Services/service.service';
@@ -20,6 +23,19 @@ export class TrendsComponent implements OnInit {
   barChartLegend;
   barChartPlugins;
   barChartType;
+
+  lineChartData: ChartDataSets[];
+  lineChartLabels: Label[];
+  lineChartOptions;
+  lineChartColors: Color[];
+  lineChartLegend;
+  lineChartPlugins;
+  lineChartType;
+
+  timeLabels = [];
+  chartLabelsAsDate: Date;
+  chartTimeLabels = [];
+
   waterTempsLabels = [];
 
   twenty15;
@@ -47,6 +63,13 @@ export class TrendsComponent implements OnInit {
   lakeOnt = [];
   lakeHuron = [];
 
+  HABSdata;
+  bgaData = [];
+  bgaChartData = [];
+
+
+
+
 
   convertToF = (celsius: number) => {
     let far = celsius * 9/5 + 32;
@@ -59,6 +82,21 @@ export class TrendsComponent implements OnInit {
   ngOnInit(): void {
     this.buoyService.currentWeather().subscribe((result: any) => {
       console.log('result', result);
+    });
+
+    this.buoyService.westErieHABS().subscribe((result: any) => {
+      this.HABSdata = result;
+      console.log("HABZ", this.HABSdata)
+      this.HABSdata.table.rows.forEach(row => {
+        this.bgaData.push(row[2]);
+        this.timeLabels.push(row[0]);
+      });
+
+      this.bgaChartData = this.sortOutBGAData(this.bgaData, 4);
+      this.chartTimeLabels = this.sortOutBGAData(this.timeLabels, 4);
+
+      console.log("SHOULD HAVE LESS NUMBS", this.bgaChartData);
+      console.log("SHOULD HAVE SAME", this.chartTimeLabels)
     });
 
     this.buoyService.averageDailyWaterTemp().subscribe((result: any) => {
@@ -87,10 +125,9 @@ export class TrendsComponent implements OnInit {
       this.twenty20Average = this.getAverages(this.twenty20temps);
 
       this.glosapi.table.rows.forEach(row => {
-
         this.waterTempsLabels.push(row[0]);
       })
-      this.setData();
+      this.setGraphData();
       this.setLakeData();
 
     }, (err) => {
@@ -106,6 +143,15 @@ sortByLake = (temp: any[]) => {
     year.push(array);
   }
   return year;
+}
+
+sortOutBGAData = (array, nth) => array.filter((e, i) => i % nth === nth -1);
+
+convertDate = () => {
+for (i = 0; i < this.chartTimeLabels; i++) {
+  new Date(this.chartTimeLabels);
+  console.log("NEW DATE", this.chartTimeLabels)
+}
 }
 
 setLakeData = () => {
@@ -126,7 +172,7 @@ getAverages = (temp: any[]) => {
   } return averagesArray;
 }
 
-  setData = () => {
+  setGraphData = () => {
     this.barChartData = [
       { data: this.lakeSup, label: 'Lake Superior' },
       { data: this.lakeMich, label: 'Lake Michigan' },
@@ -154,7 +200,31 @@ getAverages = (temp: any[]) => {
     this.barChartLegend = true;
     this.barChartPlugins = [];
     this.barChartType = 'bar';
+
+    this.lineChartData = [
+      { data: this.bgaChartData, label: 'Blue Green Algae' },
+    ];
+  
+   this.lineChartLabels = this.chartTimeLabels;
+  
+  this.lineChartOptions = {
+      responsive: true,
+    };
+  
+  this.lineChartColors = [
+      {
+        borderColor: 'grey',
+        backgroundColor: 'rgba(255,255,0,0.28)',
+      },
+    ];
+  
+  this.lineChartLegend = true;
+  this.lineChartPlugins = [];
+  this.lineChartType = 'line';
   }
+
+
+
 }
 
 
