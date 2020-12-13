@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const { Client } = require("pg"); //npm i pg in terminal before this will work
+const { send } = require("process");
 
 //creates client
 const client = new Client({
@@ -59,24 +60,40 @@ app.get("/", (req, res) => {
 app.post("/create", (req, res) => {
   client.query(
     `INSERT INTO glos_users (firstname, lastname, email, password)
-    VALUES '${req.body}'`,
-    (err, data) => {
+    VALUES ('${req.body.firstname}', '${req.body.lastname}','${req.body.email}','${req.body.password}')`);
+    
       res.json({
         msg: "New User Added",
         user: req.body,
       });
     }
   );
-});
 
-app.put("/:id", (req, res) => {
+
+app.put("/update/:password", (req, res) => {
   client.query(
-    `UPDATE glos_users SET firstname=${req.body.firstname}, WHERE id=${req.params.id}`
-  );
-  `UPDATE glos_users SET lastname=${req.body.lastname}, WHERE id=${req.params.id}`;
-  `UPDATE glos_users SET email=${req.body.email}, WHERE id=${req.params.id}`;
-  `UPDATE glos_users SET password=${req.body.password}, WHERE id=${req.params.id}`;
-});
+    `UPDATE glos_users SET firstname = '${req.body.firstname}', lastname='${req.body.lastname}',
+     email='${req.body.email}',
+     kayak_minair=${req.body.kayak_minair},
+     kayak_minwater=${req.body.kayak_minwater},
+     kayak_maxwind='${req.body.kayak_maxwind}',
+     kayak_maxwave='${req.body.kayak_maxwave}',
+     swim_minair='${req.body.swim_minair}',
+     swim_minwater='${req.body.swim_minwater}',
+     swim_maxwind='${req.body.kayak_maxwind}',
+     swim_maxwave=${req.body.swim_maxwave},
+     boat_minair= ${req.body.boat_minair},
+ boat_minwater=${req.body.boat_minwater},
+ boat_maxwind=${req.body.boat_maxwind},
+ boat_maxwave=${req.body.boat_maxwave}
+     WHERE password='${req.params.password}'`);
+
+
+  res.json({
+    msg: "USER UPDATED",
+    data: req.body,
+  });
+})
 
 app.delete("/:id", (req, res) => {
   console.log(req.params.id);

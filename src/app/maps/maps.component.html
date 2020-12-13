@@ -1,5 +1,13 @@
+<div class="level-left mb-4">
+  <div class="icon is-large mr-4">
+    <img src="/assets/buoy .svg" class="fas fa-3x">
+  </div>
+  <div>
+    <p class="heading is-size-5">Great Lakes Observing System</p>
+    <p class="title is-size-6">Great Lakes Buoys</p>
+  </div>
+</div>
 
-<h1 class="title is-4 has-text-centered">{{ title }}</h1>
 <google-map [center]="center" [zoom]="zoom">
   <map-marker #marker="mapMarker" *ngFor="let buoy of buoys; index as i" [position]="buoy.position"
     (mapClick)="openInfoWindow(marker, i)"></map-marker>

@@ -10,8 +10,9 @@ import {ServiceService} from '../Services/service.service'
   styleUrls: ['./create-profile.component.css']
 })
 export class CreateProfileComponent implements OnInit {
-profileForm: FormGroup
-  constructor(private formBuilder: FormBuilder, private router: Router, private http:HttpClient, private serviceService: ServiceService) { }
+  user: any
+  profileForm: FormGroup;
+  constructor(private formBuilder: FormBuilder, private router: Router, private httpClient :HttpClient, private serviceService: ServiceService) { }
 
   ngOnInit(): void {
     
@@ -20,20 +21,17 @@ profileForm: FormGroup
       lastname: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
-      optin: [Boolean, Validators.required],
-      swims: [Boolean, Validators.required],
-      boats: [Boolean, Validators.required],
-      kayaks: [Boolean, Validators.required],
+
   }
   )};
 
 
   onSubmit(){
-    console.log(this.profileForm.value);
+    console.log(this.profileForm.value);    
     this.serviceService.createUser(this.profileForm.value).subscribe((res) => {
-      console.log('RESPONSE', res);
+      console.log('NEW USER', res);
       localStorage.setItem('password', this.profileForm.value.password);
-            this.router.navigateByUrl('/dashboard');
+      this.router.navigateByUrl('/dashboard');
 
     });
 }}

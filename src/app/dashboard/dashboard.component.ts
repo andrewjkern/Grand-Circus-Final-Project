@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ServiceService } from '../Services/service.service';
 import { HttpClient } from '@angular/common/http';
+import {GoogleMap} from '@angular/google-maps';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +21,14 @@ forecast = ""
 safeSwim = ""
 safeKayak =""
 safeBoat = ""
-safetyRating: boolean = false;
+isSafe: boolean = true;
+kayakSafeIcon = "";
+swimSafeIcon = "";
+safeBoatIcon = "";
+hideIcon = false;
+buoyID;
+mostRecentTime;
+showBuoy = false;
 
   buoyArray: any[] = [];
 
@@ -48,27 +56,36 @@ handleClick(event) {
   this.forecast=event.NWSForecast.title[0]
   this.windSpeed=event.NWSForecast.windspeed[0]
   this.waveHeight=event.NWSForecast.waveheight[0]
-  if(event.NWSForecast.temperature[0] <= 75){
-    this.safeSwim = "Not Safe"
-    // this.temperature.push(this.safetyRating);
+  this.buoyID=event.id;
+  this.mostRecentTime=event.updateTime;
+  if(event.NWSForecast.temperature[0] <= this.user.swim_minair){
+    this.safeSwim = "Based on your preferences, it may be too cold to go swimming."
+    this.swimSafeIcon = "/assets/exclamation-circle-solid.svg";
+
   }else{
-    this.safeSwim = "Safe"
-    // this.temperature.push(this.safetyRating = true);
+    this.safeSwim = "This is a great temperature to go swimming!";
+    this.swimSafeIcon = "/assets/check-solid.svg"
+    this.hideIcon = true;
   }  
-  if(event.NWSForecast.temperature[0] <= 60){
-    this.safeKayak = "Not Safe"
-    // this.safetyRating;
+  if(event.NWSForecast.temperature[0] <= this.user.kayak_minair){
+    this.safeKayak = "Based on your preferences, it may not be safe to go kayaking at this time."
+    this.kayakSafeIcon = "/assets/exclamation-circle-solid.svg";
+    this.hideIcon = true;
   }else{
-    this.safeKayak = "Safe"
-    // this.safetyRating = true;
+    this.safeKayak = "This is a great temperature to go kayaking!"
+    this.kayakSafeIcon = "/assets/check-solid.svg";
+    this.hideIcon = true;
   }
-  if(event.NWSForecast.temperature[0] <= 50){
-    this.safeBoat = "Not Safe"
-    // this.safetyRating;
+  if(event.NWSForecast.temperature[0] <= this.user.boat_minair){
+    this.safeBoat = "Based on your preferences, it may not be a good day to go boating."
+    this.safeBoatIcon = "/assets/exclamation-circle-solid.svg";
+    this.hideIcon = true;
   }else{
-    this.safeBoat = "Safe"
-    // this.safetyRating = true;
+    this.safeBoat = "This is a great temperature to take your boat out!";
+    this.safeBoatIcon = "/assets/check-solid.svg";
+    this.hideIcon = true;
   }
+  this.showBuoy = true;
 }
 
 }

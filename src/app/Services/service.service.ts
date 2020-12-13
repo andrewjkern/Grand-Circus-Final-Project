@@ -19,8 +19,11 @@ export class ServiceService {
     return this.httpClient.get(`https://api.openweathermap.org/data/2.5/forecast/climate?lat=351&lon=139&appid=17c2dcbf565359f7101c4ad856a515d`)
   };
   createUser = (user): any =>{
-    return this.httpClient.post("http://localhost:3000/create",user)
-  }
+    return this.httpClient.post("http://localhost:3000/create", user)
+  };
+updateUser = (user): any =>{
+  return this.httpClient.put(`http://localhost:3000/update/${localStorage.getItem('password')}`,user)
+}
 getBuoys () : any{
 return this.httpClient.get("https://glbuoys.glos.us/static/Buoy_tool/data/meta_english.json")
 }

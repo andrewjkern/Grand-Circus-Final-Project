@@ -1,71 +1,119 @@
-<app-navigation></app-navigation>
+<app-topheader></app-topheader>
+<div class="sidenav"><app-navigation></app-navigation></div>
+<div class="box mainContainer">
+  <h2>Update Profile</h2>
+  <div class="grayline"></div>
 <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+  
+  <div class="field personal">
+  <h3>Personal Information</h3>
   <input
     type="text"
     name="firstname"
     id="Name"
-    placeholder="{{ user.firstname }}"
-    value="{{user.firstname}}"
+    placeholder="First Name"
+    value="{{ user.firstname }}"
+    formControlName="firstname"
   />
   <input
     type="text"
     name="lastname"
     id="Name"
-    placeholder="{{ user.lastname }}"
+    placeholder="Last Name"
+    value="{{ user.lastname }}"
+    formControlName="lastname"
   />
 
-  <input type="email" name="email" id="email" placeholder="{{ user.email }}" />
+  <input type="email" name="email" id="email" placeholder="E-Mail Address" formControlName="email"/>
+</div>
+  <div class="field kayaking">
+    <h3>Preferred Kayaking Conditions</h3>
   <input
     type="number"
     name="kayak_minair"
-    placeholder="{{ user.kayak_minair }}"
+    placeholder="Min. Air Temp. (&#176;F)"
+    value="{{ user.kayak_minair }}"
+    formControlName="kayak_minair"
   />
   <input
     type="number"
     name="kayak_minwater"
-    placeholder="{{ user.kayak_minwater }}"
+    placeholder="Min. Water Temp. (&#176;F)"
+    value="{{ user.kayak_minwater }}"
+    formControlName="kayak_minwater"
   /><input
     type="number"
     name="kayak_maxwind"
-    placeholder="{{ user.kayak_maxwind }}"
+    placeholder="Max Wind Speed (MPH)"
+    value="{{ user.kayak_maxwind }}"
+    formControlName="kayak_maxwind"
   /><input
     type="number"
     name="kayak_maxwave"
-    placeholder="{{ user.kayak_maxwave }}"
-  /><input
+    placeholder="Max Wave Height (ft.)"
+    value="{{ user.kayak_maxwave }}"
+    formControlName="kayak_maxwave"
+  />
+</div>
+<div class="field swimming">
+  <h3>Preferred Swimming Conditions</h3>
+
+<input
     type="number"
     name="swim_minair"
-    placeholder="{{ user.swim_minair }}"
+    placeholder="Min. Air Temp. (&#176;F)"
+    value="{{ user.swim_minair }}"
+    formControlName="swim_minair"
   />
   <input
     type="number"
     name="swim_minwater"
-    placeholder="{{ user.swim_minwater }}"
+    placeholder="Min. Water Temp. (&#176;F)"
+    value="{{ user.swim_minwater }}"
+    formControlName="swim_minwater"
   /><input
     type="number"
     name="swim_maxwind"
-    placeholder="{{ user.swim_maxwind }}"
+    placeholder="Max Wind Speed (MPH)"
+    value="{{ user.swim_maxwind }}"
+    formControlName="swim_maxwind"
   /><input
     type="number"
     name="swim_maxwave"
-    placeholder="{{ user.swim_maxwave }}"
-  /><input
+    placeholder="Max Wave Height (ft.)"
+    value="{{ user.swim_maxwave }}"
+    formControlName="swim_maxwave"
+  />
+</div>
+<div class="field boating">
+  <h3>Preferred Boating Conditions</h3>
+<input
     type="number"
     name="boat_minair"
-    placeholder="{{ user.boat_minair }}"
+    placeholder="Min. Air Temp. (&#176;F)"
+    value="{{ user.boat_minair }}"
+    formControlName="boat_minair"
   />
   <input
     type="number"
     name="boat_minwater"
-    placeholder="{{ user.boat_minwater }}"
+    placeholder="Min. Water Temp. (&#176;F)"
+    value="{{ user.boat_minwater }}"
+    formControlName="boat_minwater"
   /><input
     type="number"
     name="boat_maxwind"
-    placeholder="{{ user.boat_maxwind }}"
+    placeholder="Max Wind Speed (MPH)"
+    value="{{ user.boat_maxwind }}"
+    formControlName="boat_maxwind"
   /><input
     type="number"
     name="boat_maxwave"
-    placeholder="{{ user.boat_maxwave }}"
+    placeholder="Max Wave Height (ft.)"
+    value="{{ user.boat_maxwave }}"
+    formControlName="boat_maxwave"
   />
-  <input type="submit" value="Update Profile" />
+</div>
+  <input class="button is-success" type="submit" value="Update Profile" />
 </form>
+</div>

@@ -1,16 +1,23 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
-    <div id="navbarBasicExample" class="navbar-menu">
+<nav class="navbar is-vcentered " role="navigation" aria-label="main navigation">
+    <div id="navbarBasicExample" class="navbar-menu is-active">
+      <!-- <div class="navbar-brand"> -->
+        <a class="navbar-item navbar-start" routerLink="/dashboard">
+          <img src="https://www.glos.us/wp-content/themes/optimizer-child/img/GLOS_FinalLogoRBG_edit.png" alt="Great Lakes Observing System" width="150">
+        </a>
+      <!-- </div> -->
       <div class="navbar-end">
-        <div class="navbar-item">
+
+        <div class="navbar-item navbar-end">
           <div class="buttons">
             <span class="icon is-medium">
-                <i class="fas fa-lg fa-cog has-text-danger"></i>
+                <i class="icon fas fa-lg fa-cog has-text-grey-lighter pr-6"></i>
               </span>
-              <figure class="image is-64x64">
-                <img src="https://wpchurch.team/wp-content/uploads/2017/05/Generic-Avatar.jpg">
-              </figure>
+              <figure class="image is-64x64 pr-4">
+                <i class="fas fa-tint icon"></i></figure>
+              <p class="has-text-dark">{{this.user.firstname}} {{this.user.lastname}}</p>
           </div>
         </div>
       </div>
     </div>
   </nav>
+  <div class="line mb-3"></div>

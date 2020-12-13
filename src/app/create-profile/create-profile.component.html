@@ -1,15 +1,60 @@
-<app-navigation></app-navigation>
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="createProfile">
-    <div class="name">
-    First Name<input  type="text" formControlName="firstname">
-    Last Name<input  type="text" formControlName="lastname">
+<div class="columns mainContainer is-vcentered is-centered">
+  <div class="column box is-vcentered is-centered is-half">
+    <div class="container mt-4">
+      <img
+        src="https://www.glos.us/wp-content/themes/optimizer-child/img/GLOS_FinalLogoRBG_edit.png"
+        width="250px"
+      />
+    </div>
+
+    <form
+      [formGroup]="profileForm"
+      (ngSubmit)="onSubmit()"
+      class="loginForm mt-5"
+    >
+    <article class="message is-info is-centered">
+      <div class="message-body is-centered">
+          <p class="is-size-4">Create an account</p>
+      </div>
+  </article>
+      <div class="field">
+        <input
+          class="input"
+          name="firstname"
+          type="text"
+          formControlName="firstname"
+          placeholder="First Name"
+        />
+      </div>
+      <div class="field">
+        <input
+          class="input"
+          name="lastname"
+          type="text"
+          formControlName="lastname"
+          placeholder="Last Name"
+        />
+      </div>
+      <div class="field">
+        <input
+          class="input"
+          type="email"
+          name="email"
+          formControlName="email"
+          placeholder="E-Mail Address"
+        />
+        <p>*GLOS will not send you any e-mails</p>
+      </div>
+      <div class="field">
+        <input
+          class="input"
+          type="text"
+          name="password"
+          formControlName="password"
+          placeholder="Choose a Password"
+        />
+      </div>
+      <input class="button is-success centerButton" type="submit" value="Create Profile" />
+    </form>
+  </div>
 </div>
-    E-Mail Address<input type="email" formControlName="email">
-    Opt In to Newsletter?<input class="check" type="checkbox" formControlName="optin">
-    Password<input type="text" formControlName="password">
-    <p>My Favorite Water Activities Are:</p>
-    <div class="check">Swimming<input type="checkbox" formControlName="swims"></div>
-    <div class="check">Kayaking<input type="checkbox" formControlName="kayaks"></div>
-    <div class="check">Boating<input type="checkbox" formControlName="boats"></div>
-    <input type="submit" value="Create Profile">
-</form>

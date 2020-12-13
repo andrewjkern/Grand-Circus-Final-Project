@@ -1,72 +1,105 @@
-
 <app-topheader></app-topheader>
 
 <div class="columns">
-  
-    <app-navigation></app-navigation>
+  <app-navigation></app-navigation>
 
-    <div 
-    class="columns">
+  <div class="column">
+    <div class="box mapbox">
+      <app-maps (newItemEvent)="handleClick($event)"></app-maps>
+    </div>
+  </div>
+
+  <div *ngIf="showBuoy" class="column level is-one-quarter mr-3">
+    <div class="box">
+      <p class="title is-5 has-text-centered">Buoy {{buoyID}}</p>
+      <div class="level-item has-text-centered pb-3">
+        <div>
+          <p class="title is-size-6 is-family-monospace has-text-danger">{{mostRecentTime | date:'long'}}</p>
+        </div>
+      </div>
+
+      <div class="level-item has-text-centered pb-3">
+        <div>
+          <p class="heading">Temperature:</p>
+          <p class="title is-size-5">{{ temperature }} &#176;F</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered pb-3">
+        <div>
+          <p class="heading">Forecast:</p>
+          <p class="title is-size-5">{{ forecast }}</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered pb-3">
+        <div>
+          <p class="heading">Wind Speed:</p>
+          <p class="title is-size-5">{{ windSpeed }}</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered pb-3">
+        <div>
+          <p class="heading">Wave Height:</p>
+          <p class="title is-size-5">{{ waveHeight }}</p>
+        </div>
+      </div>
+      <div class="columns notification is-info is-vcentered is-mobile mt-4">
+        <div class="column is-one-quarter">
+          <span class="icon is-large">
+            <i class="fas fa-mobile-alt fa-2x"></i>
+          </span>
+        </div>
         <div class="column">
-          <div class="box">
-            <app-maps (newItemEvent)="handleClick($event)"></app-maps>
-          </div>
+          <p class="subtitle is-6 is-three-quarters">Text {{buoyID}} toll free to 866-218-9973 for the latest observations.</p>
         </div>
+      </div>
 
+    </div>
 
+    <div class="box">
+      <div
+        [ngClass]="{
+          'is-danger':
+            safeSwim ===
+            'Based on your preferences, it may be too cold to go swimming.',
+          'is-success':
+            safeSwim === 'This is a great temperature to go swimming!'
+        }"
+        class="notification is-light"
+        style="overflow: hidden"
+      >
+        <nav class="level">
+          <p>{{ safeSwim }}</p>
+        </nav>
+      </div>
 
-        <div class="column level">
-            <div class="box">
-              <p class="title is-5 has-text-centered">Data for Today</p>
-              <div class="level">
-                <div class="level-item has-text-centered">
-                  <div>
-                    <p class="heading">Temperature:</p>
-                    <p class="title is-size-4">{{temperature}}</p>
-                  </div>
-                </div>
-                <div class="level-item has-text-centered">
-                  <div>
-                    <p class="heading">Forecast:</p>
-                    <p class="title is-size-4">{{forecast}}</p>
-                  </div>
-                </div>
-                <div class="level-item has-text-centered">
-                  <div>
-                    <p class="heading">Wind Speed:</p>
-                    <p class="title is-size-4">{{windSpeed}}</p>
-                  </div>
-                </div>
-                <div class="level-item has-text-centered">
-                  <div>
-                    <p class="heading">Wave Height:</p>
-                    <p class="title is-size-4">{{waveHeight}}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="box">
-              <p class="subtitle">Swimming:</p>
-              <div>
-                <div>
-                  {{safeSwim}}
-                </div>
-              </div>
-              <p class="subtitle">Kayaking:</p>
-              <div>
-                <div>
-                  {{safeKayak}}
-                </div>
-              </div>
-              <p class="subtitle">Boating:</p>
-              <div>
-                <div>
-                  {{safeBoat}}
-                </div>
-              </div>
-            </div>
-        </div>    
-        </div>
-              
+      <div
+        [ngClass]="{
+          'is-danger':
+            safeKayak ===
+            'Based on your preferences, it may not be safe to go kayaking at this time.',
+          'is-success':
+            safeKayak === 'This is a great temperature to go kayaking!'
+        }"
+        class="notification is-light"
+      >
+        <nav class="level">
+          <p>{{ safeKayak }}</p>
+        </nav>
+      </div>
+      <div
+        [ngClass]="{
+          'is-danger':
+            safeBoat ===
+            'Based on your preferences, it may not be a good day to go boating.',
+          'is-success':
+            safeBoat === 'This is a great temperature to take your boat out!'
+        }"
+        class="notification is-light"
+      >
+        <nav class="level">
+          <p>{{ safeBoat }}</p>
+        </nav>
+      </div>
+    </div>
+  </div>
 </div>
-
