@@ -2,6 +2,11 @@
     height: 100%;
     object-fit: cover;
 }
+.has-text-dark{
+    position: absolute;
+    top: 0;
+}
+
 
 nav {
     background-color: transparent;
@@ -13,14 +18,21 @@ nav {
 }
 
 .navbar-brand{
-    position: absolute;
+    position: fixed;
     left: 0;
 
 }
 
 .navbar-end{
-    position: fixed;
-    right: 0%;
+margin-right: 5px;
+width: 50%;
+position: absolute;
+right: 0;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
 }
 
 #navbarBasicExample{
@@ -36,6 +48,6 @@ nav {
 
 }
 
-@media screen and (max-width: 759px){.icon{
+@media screen and (max-width: 768px){.icon{
     display: none;
 }}

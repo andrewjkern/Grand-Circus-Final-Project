@@ -1,3 +1,4 @@
+
 .mainContainer {
   display: flex;
   flex-direction: column;
@@ -5,6 +6,15 @@
   width: 100%;
   /* border: solid 1px blue; */
 }
+
+.mapComp{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: inherit;
+  justify-content: center;
+}
+
 h1 {
   width: 50%;
   height: 60%;
@@ -60,9 +70,10 @@ h2 {
 }
 
 .mapBox {
-  widows: 75%;
+  width: 100%;
   height: 75%;
   margin: 10px;
+  align-items: center;
 }
 
 .socials {
@@ -124,7 +135,7 @@ i {
   }
 }
 
-@media only screen and (max-width: 760px){
+@media only screen and (max-width: 768px){
 
     .mainContainer{
         height: auto;
