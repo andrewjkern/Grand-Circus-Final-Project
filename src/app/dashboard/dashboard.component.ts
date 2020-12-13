@@ -14,7 +14,7 @@ user: any;
 
 glosapi;
 date = ""
-temperature;
+temperature = "";
 windSpeed = ""
 waveHeight = ""
 forecast = ""
