@@ -10,6 +10,7 @@ import {TrendsComponent} from '../trends/trends.component';
 import {CreateProfileComponent} from '../create-profile/create-profile.component'
 import {LoginComponent} from '../login/login.component'
 import { ngModuleJitUrl } from '@angular/compiler';
+
 const glosRoutes: Routes = [
     {path: 'contact', component: ContactComponent},
     {path: 'navigation', component: NavigationComponent},

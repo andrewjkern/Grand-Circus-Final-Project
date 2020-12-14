@@ -147,13 +147,6 @@ sortByLake = (temp: any[]) => {
 
 sortOutBGAData = (array, nth) => array.filter((e, i) => i % nth === nth -1);
 
-convertDate = () => {
-for (i = 0; i < this.chartTimeLabels; i++) {
-  new Date(this.chartTimeLabels);
-  console.log("NEW DATE", this.chartTimeLabels)
-}
-}
-
 setLakeData = () => {
   this.lakeSup.push(this.twenty15Average[0], this.twenty16Average[0], this.twenty17Average[0], this.twenty18Average[0], this.twenty19Average[0], this.twenty20Average[0]);
   this.lakeMich.push(this.twenty15Average[1], this.twenty16Average[1], this.twenty17Average[1], this.twenty18Average[1], this.twenty19Average[1], this.twenty20Average[1]);
