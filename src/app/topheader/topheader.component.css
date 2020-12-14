@@ -36,7 +36,7 @@ right: 0;
 }
 
 #navbarBasicExample{
-    background-color: rgb(249, 249, 249)
+    background-color: rgba(249, 249, 249, .8)
 }
 
 @media screen and (max-width: 1023px){

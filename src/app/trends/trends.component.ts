@@ -67,10 +67,6 @@ export class TrendsComponent implements OnInit {
   bgaData = [];
   bgaChartData = [];
 
-
-
-
-
   convertToF = (celsius: number) => {
     let far = celsius * 9/5 + 32;
     return far;
@@ -86,17 +82,17 @@ export class TrendsComponent implements OnInit {
 
     this.buoyService.westErieHABS().subscribe((result: any) => {
       this.HABSdata = result;
-      console.log("HABZ", this.HABSdata)
       this.HABSdata.table.rows.forEach(row => {
         this.bgaData.push(row[2]);
         this.timeLabels.push(row[0]);
       });
 
+      // for (let i = 0; i < this.timeLabels.length; i++) {
+      //   this.timeLabels[i].toDateString();
+      // }
+
       this.bgaChartData = this.sortOutBGAData(this.bgaData, 4);
       this.chartTimeLabels = this.sortOutBGAData(this.timeLabels, 4);
-
-      console.log("SHOULD HAVE LESS NUMBS", this.bgaChartData);
-      console.log("SHOULD HAVE SAME", this.chartTimeLabels)
     });
 
     this.buoyService.averageDailyWaterTemp().subscribe((result: any) => {
@@ -201,13 +197,26 @@ getAverages = (temp: any[]) => {
    this.lineChartLabels = this.chartTimeLabels;
   
   this.lineChartOptions = {
-      responsive: true,
+        elements: {
+            point:{
+                radius: 0
+            }
+          },
+          scales: {
+          xAxes: [{
+            ticks: {
+                autoSkip: true,
+                maxTicksLimit: 16
+          }
+          }]
+        }
     };
   
   this.lineChartColors = [
       {
         borderColor: 'grey',
-        backgroundColor: 'rgba(255,255,0,0.28)',
+        backgroundColor: 'rgba(57,151,181,0.28)',
+        borderWidth: 1,
       },
     ];
   
