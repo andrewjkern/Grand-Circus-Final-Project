@@ -50,10 +50,13 @@ ul{
 li{
     display: flex;
     flex-direction: column;
+
     
 
 }
-
+a{
+    
+}
 a:hover{
     background-color: white;
 }

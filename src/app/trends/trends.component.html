@@ -12,9 +12,9 @@
                 </div>
                 <div>
                   <p class="heading is-size-5">Great Lakes</p>
-                  <p class="title is-size-6">Average yearly surface water temperature ()</p>
+                  <p class="title is-size-6">Average yearly surface water temperature (°F)</p>
                 </div>
-              </div>
+            </div>
             <div
             class="chart-wrapper">
                 <canvas baseChart 
@@ -27,10 +27,32 @@
                     [plugins]="barChartPlugins">
                 </canvas>
             </div>
+            <p class="has-text-right is-size-7 is-italic">Source: NOAA GLERL (Great Lakes Environmental Research Laboratory)</p>
         </div>
     </div>
     <div class="column">
-        <div class="box"></div>
+        <div class="box">
+            <div class="level-left mb-4">
+                <div class="icon is-large mr-4">
+                  <img src="/assets/buoy .svg" class="fas fa-3x">
+                </div>
+                <div>
+                  <p class="heading is-size-5">Lake Erie HABS Monitoring</p>
+                  <p class="title is-size-6">Blue Green Algae (rfu) - Summer 2019</p>
+                </div>
+            </div>
+            <div class="chart-wrapper">
+                <canvas baseChart 
+                    [datasets]="lineChartData" 
+                    [labels]="lineChartLabels" 
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors" 
+                    [legend]="lineChartLegend" 
+                    [chartType]="lineChartType" 
+                    [plugins]="lineChartPlugins">
+                </canvas>
+            </div>
+        </div>
         <div class="box"></div>
     </div>
 </div>
