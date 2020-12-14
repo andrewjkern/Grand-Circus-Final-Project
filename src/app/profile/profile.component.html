@@ -28,6 +28,7 @@
 </div>
   <div class="field kayaking">
     <h3>Preferred Kayaking Conditions</h3>
+    <p>Min Air Temp (°F)</p>
   <input
     type="number"
     name="kayak_minair"
@@ -35,19 +36,24 @@
     value="{{ user.kayak_minair }}"
     formControlName="kayak_minair"
   />
+  <p>Min Water Temp (°F)</p>
   <input
     type="number"
     name="kayak_minwater"
     placeholder="Min. Water Temp. (&#176;F)"
     value="{{ user.kayak_minwater }}"
     formControlName="kayak_minwater"
-  /><input
+  />
+  <p>Max Water Temp (°F)</p>
+  <input
     type="number"
     name="kayak_maxwind"
     placeholder="Max Wind Speed (MPH)"
     value="{{ user.kayak_maxwind }}"
     formControlName="kayak_maxwind"
-  /><input
+  />
+  <p>Max Wave Height</p>
+  <input
     type="number"
     name="kayak_maxwave"
     placeholder="Max Wave Height (ft.)"
@@ -57,7 +63,7 @@
 </div>
 <div class="field swimming">
   <h3>Preferred Swimming Conditions</h3>
-
+  <p>Min Air Temp (°F)</p>
 <input
     type="number"
     name="swim_minair"
@@ -65,19 +71,24 @@
     value="{{ user.swim_minair }}"
     formControlName="swim_minair"
   />
+  <p>Min Water Temp (°F)</p>
   <input
     type="number"
     name="swim_minwater"
     placeholder="Min. Water Temp. (&#176;F)"
     value="{{ user.swim_minwater }}"
     formControlName="swim_minwater"
-  /><input
+  />
+  <p>Max Water Temp (°F)</p>
+  <input
     type="number"
     name="swim_maxwind"
     placeholder="Max Wind Speed (MPH)"
     value="{{ user.swim_maxwind }}"
     formControlName="swim_maxwind"
-  /><input
+  />
+  <p>Max Wave Height</p>
+  <input
     type="number"
     name="swim_maxwave"
     placeholder="Max Wave Height (ft.)"
@@ -87,6 +98,7 @@
 </div>
 <div class="field boating">
   <h3>Preferred Boating Conditions</h3>
+  <p>Min Air Temp (°F)</p>
 <input
     type="number"
     name="boat_minair"
@@ -94,19 +106,24 @@
     value="{{ user.boat_minair }}"
     formControlName="boat_minair"
   />
+  <p>Min Water Temp (°F)</p>
   <input
     type="number"
     name="boat_minwater"
     placeholder="Min. Water Temp. (&#176;F)"
     value="{{ user.boat_minwater }}"
     formControlName="boat_minwater"
-  /><input
+  />
+  <p>Max Water Temp (°F)</p>
+  <input
     type="number"
     name="boat_maxwind"
     placeholder="Max Wind Speed (MPH)"
     value="{{ user.boat_maxwind }}"
     formControlName="boat_maxwind"
-  /><input
+  />
+  <p>Max Wave Height</p>
+  <input
     type="number"
     name="boat_maxwave"
     placeholder="Max Wave Height (ft.)"
