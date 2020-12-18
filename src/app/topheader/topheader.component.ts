@@ -12,7 +12,7 @@ user: any;
 
   ngOnInit(): void {
     
-    this.httpClient.get(`http://localhost:3000/user/${localStorage.getItem('password')}`).subscribe((result: any) =>{
+    this.httpClient.get(`https://myglos.herokuapp.com/user/${localStorage.getItem('password')}`).subscribe((result: any) =>{
     console.log("User Info", result);
     this.user = result.data[0]
     })

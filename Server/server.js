@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const { Client } = require("pg"); //npm i pg in terminal before this will work
 const { send } = require("process");
 
@@ -8,7 +8,7 @@ const { send } = require("process");
 const client = new Client({
   host: "localhost",
   database: "users",
-  port: 5500,
+  port: process.env.PORT || 5500,
   user: "docker",
   password: "docker",
 });

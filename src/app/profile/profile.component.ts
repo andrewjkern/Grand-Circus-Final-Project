@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private router: Router,private httpClient: HttpClient, private serviceService: ServiceService) { }
 
   ngOnInit(): void {   
-    this.httpClient.get(`http://localhost:3000/user/${localStorage.getItem('password')}`).subscribe((result: any) =>{
+    this.httpClient.get(`http://https://myglos.herokuapp.com/user/${localStorage.getItem('password')}`).subscribe((result: any) =>{
     console.log("User Info", result);
     this.user = result.data[0];
     this.updateForm.setValue({
