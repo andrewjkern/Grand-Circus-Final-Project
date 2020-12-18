@@ -22,7 +22,7 @@ export class ServiceService {
     return this.httpClient.post(`https://myglos.herokuapp.com/create`, user)
   };
 updateUser = (user): any =>{
-  return this.httpClient.put(`https://myglos.herokuapp.com/update/${localStorage.getItem('password')}`,user)
+  return this.httpClient.put(`http://localhost:3000/update/${localStorage.getItem('password')}`,user)
 }
 getBuoys () : any{
 return this.httpClient.get("https://glbuoys.glos.us/static/Buoy_tool/data/meta_english.json")

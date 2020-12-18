@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   
 onSubmit(){
   console.log(this.loginForm.value);
-  this.http.get(`https://myglos.herokuapp.com/login/${this.loginForm.value.password}`).subscribe((res) => {
+  this.http.get(`http://localhost:3000/login/${this.loginForm.value.password}`).subscribe((res) => {
     console.log('RESPONSE', res);
     localStorage.setItem('password',this.loginForm.value.password);
     this.router.navigateByUrl('/dashboard')
